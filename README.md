@@ -1,2 +1,2 @@
 # Programacion
-Subida de proyectos realizazos en clase
+Subida de proyectos realizados en clase
