@@ -1,9 +1,13 @@
 
-^
-java:S1192"HDefine a constant instead of duplicating this literal "Ramirez" 5 times.(ÉÈ°Ö
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÚ“¹
-E	java:S106"+Replace this use of System.out by a logger.(öåÇ¬ùÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(î¬á¥ûÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(ÂÓŠËÿÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(Ûóßßıÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(ˆ§Ûøÿÿÿÿ
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÚ“¹8ÿçÏÄÜ1
+W
+java:S1854
+"5Remove this useless assignment to local variable "c".(ÓÇ¶ıÿÿÿÿ8âÄğÄÜ1
+X	java:S125"<This block of commented-out lines of code should be removed.(—ßÄÖ8‚èÏÄÜ1
+H
+java:S1481
+"&Remove this unused "c" local variable.(ÓÇ¶ıÿÿÿÿ8ãÄğÄÜ1
+X	java:S125"<This block of commented-out lines of code should be removed.(½ŞÊ’8ƒèÏÄÜ1
+]	java:S125"<This block of commented-out lines of code should be removed.(Ûóßßıÿÿÿÿ8ƒèÏÄÜ1
+F	java:S106"+Replace this use of System.out by a logger.(à¹×V8„èÏÄÜ1
+]	java:S125"<This block of commented-out lines of code should be removed.(ˆ§Ûøÿÿÿÿ8„èÏÄÜ1

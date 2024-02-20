@@ -5,10 +5,12 @@ import java.util.Objects;
 public class Comercial extends Empleado implements Cloneable{
 
     private double comision;
+    private Coche coche;
 
-    public Comercial(String nombre, String apellido, int edad, double salario, double comision) {
+    public Comercial(String nombre, String apellido, int edad, double salario, double comision, Coche coche) {
         super(nombre, apellido, edad, salario);
         this.comision = comision;
+        this.coche = coche;
     }
 
     public double getComision() {
@@ -37,6 +39,7 @@ public class Comercial extends Empleado implements Cloneable{
     public String toString() {
         return "Comercial{" + super.toString() +
                 "comision=" + comision +
+                ", coche=" + coche +
                 '}';
     }
 
@@ -44,4 +47,11 @@ public class Comercial extends Empleado implements Cloneable{
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    /* @Override
+    public Object clone() throws CloneNotSupportedException {
+        Comercial c = (Comercial) super.clone();
+        c.coche = (Coche)  this.coche.clone();
+        return c;
+    }*/
 }
