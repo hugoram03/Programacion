@@ -1,0 +1,9 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡Äˆ®
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡Äˆ®
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Š½¼ 
+d	java:S116"ORename this field "BASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¬‰¬
+k	java:S116"QRename this field "ALTURA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»„Žùûÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(®òÞ×
+E	java:S1061"+Replace this use of System.out by a logger.(‹µ‹¶ýÿÿÿÿ
+E	java:S1063"+Replace this use of System.out by a logger.(ªÓ¼áþÿÿÿÿ
