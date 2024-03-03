@@ -1,0 +1,32 @@
+
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Â¾µòøÿÿÿÿ8ö«Ý«à1
+r
+java:S1192"UDefine a constant instead of duplicating this literal "Stock del producto: " 3 times.(¿´´ò8ö«Ý«à1
+k
+java:S11923"IDefine a constant instead of duplicating this literal " Stock: " 3 times.(æ²ãýÿÿÿÿ8÷«Ý«à1
+–
+java:S1319"tThe type of "productosAlamcenados" should be an interface such as "List" rather than the implementation "ArrayList".(Â¾µòøÿÿÿÿ8÷«Ý«à1
+>
+java:S16433"Use a StringBuilder instead.(æ²ãýÿÿÿÿ8÷«Ý«à1
+>
+java:S16435"Use a StringBuilder instead.(ÎÞ®ôùÿÿÿÿ8÷«Ý«à1
+>
+java:S16437"Use a StringBuilder instead.(°¶èéùÿÿÿÿ8÷«Ý«à1
+‚
+java:S1104"`Make productosAlamcenados a static final constant or non-public and provide accessors if needed.(Â¾µòøÿÿÿÿ8÷«Ý«à1
+\
+java:S1444":Make this "public static productosAlamcenados" field final(Â¾µòøÿÿÿÿ8÷«Ý«à1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì©ªÇ8ø«Ý«à1
+?
+java:S2386"Make this member "protected".(Â¾µòøÿÿÿÿ8‘¬Ý«à1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(‰•‘ý8“¬Ý«à1
+L
+java:S1481"*Remove this unused "stock" local variable.(·Ï­úüÿÿÿÿ8—¬Ý«à1
+>	java:S131""Add a default case to this switch.(¡€Ø¬8—¬Ý«à1
+G	java:S106"+Replace this use of System.out by a logger.(¿´´ò8—¬Ý«à1
+G	java:S106"+Replace this use of System.out by a logger.(¿´´ò8˜¬Ý«à1
+G	java:S106 "+Replace this use of System.out by a logger.(¿´´ò8˜¬Ý«à1
+G	java:S106%"+Replace this use of System.out by a logger.(ñ»½É8˜¬Ý«à1
+L	java:S106@"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8›¬Ý«à1
