@@ -1,7 +1,7 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÚ“¹8˜ÕÄÜ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÚ“¹8ƒ‚„ÅÜ1
 o
-java:S2975/"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(™”” 8ÑÂõÄÜ1
+java:S2975/"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(™”” 8‚„ÅÜ1
 D
-java:S1185/"(Remove this method to simply inherit it.(™”” 8ÑÂõÄÜ1
-X	java:S1254"<This block of commented-out lines of code should be removed.(¯áÑë8÷§ëÄÜ1
+java:S1185/"(Remove this method to simply inherit it.(™”” 8—Û„ÅÜ1
+X	java:S1254"<This block of commented-out lines of code should be removed.(¯áÑë8‚„ÅÜ1

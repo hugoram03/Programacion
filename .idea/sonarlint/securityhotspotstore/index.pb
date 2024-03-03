@@ -136,8 +136,6 @@ Q.idea/sonarlint/securityhotspotstore/9/0/909762385fc6eb20f922a91c6865741308b57f
 Å
 Q.idea/sonarlint/securityhotspotstore/9/e/9ecf983b323b0f1a3a442c9a1ea5df40fdbfe233,0\9\09d583b0e8eb009f6a5917f1e5a977f3fbeba1f6
 Å
-Q.idea/sonarlint/securityhotspotstore/4/2/429a7284fe0fb4e5f3fab0e72156248679d8a74c,0\9\09549682f0c6e3e1167a62998fe913dea2934410
-Å
 Q.idea/sonarlint/securityhotspotstore/d/6/d63e5a2395756e5aede2f5cbd6809e21a7ade245,c\5\c5fcb9ee9c93ee15e69662f36202264bec58c87b
 Å
 Q.idea/sonarlint/securityhotspotstore/3/b/3b2a1375c880b1dd521a2d6bdad310505e56b08d,7\4\74bf7914bbb880527cb685837bab1367d26c0282
@@ -153,8 +151,6 @@ Q.idea/sonarlint/securityhotspotstore/8/9/89337f303f7305f04e7c4d01497367ac6e8632
 Q.idea/sonarlint/securityhotspotstore/2/9/29faaefae65935a87cee6bfdc6a680c313afb273,9\3\93c7acfeaa3cbab54b6318c76cd4736dfe414052
 F
 src/Pruebas/Coche.java,2\d\2d2a8bb5de508cc3d52f1797e6738c98a841e5c8
-Å
-Q.idea/sonarlint/securityhotspotstore/0/9/09549682f0c6e3e1167a62998fe913dea2934410,1\a\1a5caa1fd925a6aaf036eeb1d2ca0e8204fecba0
 Å
 Q.idea/sonarlint/securityhotspotstore/0/a/0a85464f176275e366219d0b1919a00a94ee0308,a\b\abce013fc6426c41e39349edbe83287d88b3701b
 w
@@ -245,8 +241,6 @@ w
 G.idea/sonarlint/issuestore/1/5/15617986674cb8f15e65e68b3d972cce893fc407,8\6\8693f61eaffd986db91cda399097514f9961736c
 w
 G.idea/sonarlint/issuestore/0/9/09d583b0e8eb009f6a5917f1e5a977f3fbeba1f6,7\1\712fa50040dffe04b2df4297d442c0b622fad700
-w
-G.idea/sonarlint/issuestore/0/9/09549682f0c6e3e1167a62998fe913dea2934410,8\6\865e482ff8d0e1aac341af29408c2f828af2ee3e
 w
 G.idea/sonarlint/issuestore/5/1/51835b8c9a5350a8b50dcfa803ca6225999e9ab8,6\c\6c5cee340691b8ac77eb8dfafa15d8a5a5d682d5
 w
