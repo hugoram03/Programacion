@@ -309,3 +309,23 @@ w
 G.idea/sonarlint/issuestore/f/6/f6c22bcdc79997c1d511ccb3729b0668e27e6b49,1\0\10317122677b65cd78234b497f47f52fe17758a9
 w
 G.idea/sonarlint/issuestore/f/6/f66f52006d76c51c3679ba0745e2ceb8aa952cdd,4\a\4af2fe62ff870586aaa32016f5ae92cd24c259c6
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+W
+'src/EmpresaAgroalimentaria/Almacen.java,d\9\d98dbe271635e0f2d13866d95ebe6e3aeaf310db
+Y
+)src/EmpresaAgroalimentaria/Congelado.java,7\c\7ccd1808463897d7040466208fbd42ff8b114311
+w
+G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
+T
+$src/EmpresaAgroalimentaria/Main.java,0\7\0723b23d402bb631057ac7985eaca76befdb93fe
+X
+(src/EmpresaAgroalimentaria/Producto.java,5\9\59aa74b883b817b39a493ac6e14dd01e09183ba1
+V
+&src/EmpresaAgroalimentaria/Fresco.java,d\8\d89e77a17fad9a132600686203e585f77ec398be
+[
++src/EmpresaAgroalimentaria/IUtilidades.java,e\2\e273032022662575af1edab17199fd3d4d43017a
+[
++src/EmpresaAgroalimentaria/Refrigerado.java,d\5\d510f07386a1a2a3b7e685c22217b250d3fe2bc5
+Å
+Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1\0\10a03f31c4dce92cb371e761ce9429428bb6c176
