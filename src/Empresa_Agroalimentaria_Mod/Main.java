@@ -11,6 +11,9 @@ public class Main {
         Almacen.insertar(c);
         System.out.println(Almacen.verStock());
         System.out.println(Almacen.retirar());
-        System.out.println("Stock restante: " + Almacen.getStockTotal());
+        System.out.println("Stock restante Total: " + Almacen.getStockTotal());
+        System.out.println("Stock restante Frescos: " + Almacen.getStockTotalFresco());
+        System.out.println("Stock restante Refrigerados: " + Almacen.getStockTotalRefrigerado());
+        System.out.println("Stock restante Congelados: " + Almacen.getStockTotalCongelado());
     }
 }
