@@ -1,0 +1,13 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿æ€Ïþÿÿÿÿ
+Y
+java:S1226D">Introduce a new variable instead of reusing the parameter "o".(ˆó«ýùÿÿÿÿ
+h
+java:S2975,"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(™”” 
+=
+java:S1185,"(Remove this method to simply inherit it.(™”” 
+@	java:S1067"+Replace this use of System.out by a logger.(Ê‘šÜ
+@	java:S1069"+Replace this use of System.out by a logger.(–ÑÜ
+E	java:S106>"+Replace this use of System.out by a logger.(¹ý§Ñùÿÿÿÿ
+E	java:S106@"+Replace this use of System.out by a logger.( ¯Ë‚øÿÿÿÿ
+E	java:S106B"+Replace this use of System.out by a logger.(ßÒ¸åüÿÿÿÿ

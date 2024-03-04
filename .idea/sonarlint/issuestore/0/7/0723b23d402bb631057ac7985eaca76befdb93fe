@@ -1,0 +1,14 @@
+
+
+java:S1319"tThe type of "productosAlmacenados" should be an interface such as "List" rather than the implementation "ArrayList".(ñÅßÍüÿÿÿÿ
+{
+java:S1104"`Make productosAlmacenados a static final constant or non-public and provide accessors if needed.(ñÅßÍüÿÿÿÿ
+m
+java:S1104	"RMake lector a static final constant or non-public and provide accessors if needed.(²ÖÌŞûÿÿÿÿ
+U
+java:S1444":Make this "public static productosAlmacenados" field final(ñÅßÍüÿÿÿÿ
+G
+java:S1444	",Make this "public static lector" field final(²ÖÌŞûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿æ€Ïşÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(È÷Ä
+@	java:S106#"+Replace this use of System.out by a logger.(ÍÂ­
