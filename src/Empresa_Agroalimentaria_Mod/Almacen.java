@@ -6,20 +6,20 @@ import java.util.Scanner;
 public class Almacen {
     private static Scanner lector = new Scanner(System.in);
     private static final int STOCK_MAX = 1000;
-    public static ArrayList<Producto> productosAlamcenados = new ArrayList<>();
-    private static int stockTotal;
-    private static int stockTotalFresco;
-    private static int stockFresco;
-    private static int stockTotalRefrigerado;
-    private static int stockRefrigerado;
-    private static int stockTotalCongelado;
-    private static int stockCongelado;
+    public ArrayList<Producto> productosAlamcenados = new ArrayList<>();
+    private int stockTotal;
+    private int stockTotalFresco;
+    private int stockFresco;
+    private int stockTotalRefrigerado;
+    private int stockRefrigerado;
+    private int stockTotalCongelado;
+    private int stockCongelado;
 
-    public static int getStockTotal() {
+    public int getStockTotal() {
         return stockTotal;
     }
 
-    public static void insertar(Producto producto) {
+    public void insertar(Producto producto) {
 
         int stock;
         switch (producto.obtenerTipo()) {
@@ -53,7 +53,7 @@ public class Almacen {
 
     }
 
-    public static String verStock() {
+    public String verStock() {
         String frase = "";
         if (productosAlamcenados.isEmpty()) {
             return "0";
@@ -72,7 +72,7 @@ public class Almacen {
         }
     }
 
-    public static String retirar() {
+    public String retirar() {
         int cantidad = 0;
         System.out.println("¿Que tipo de producto quieres retirar? (Fresco: " + stockTotalFresco + " /Refrigerado: " + stockTotalRefrigerado + " /Congelado: " + stockTotalCongelado + ")");
         String opcion = lector.next();
@@ -95,7 +95,7 @@ public class Almacen {
         }
     }
 
-    private static String retirarProductoFresco(int cantidad) {
+    private String retirarProductoFresco(int cantidad) {
         if (cantidad > stockTotalFresco) {
             cantidad = stockTotalFresco;
             stockTotalFresco -= cantidad;
@@ -107,7 +107,7 @@ public class Almacen {
         }
     }
 
-    private static String retirarProductoRefrigerado(int cantidad) {
+    private String retirarProductoRefrigerado(int cantidad) {
         if (cantidad > stockTotalRefrigerado) {
             cantidad = stockTotalRefrigerado;
             stockTotalRefrigerado -= cantidad;
@@ -119,7 +119,7 @@ public class Almacen {
         }
     }
 
-    private static String retirarProductoCongelado(int cantidad) {
+    private String retirarProductoCongelado(int cantidad) {
         if (cantidad > stockTotalCongelado) {
             cantidad = stockTotalCongelado;
             stockTotalCongelado -= cantidad;
@@ -132,56 +132,56 @@ public class Almacen {
 
     }
 
-    public static void setStockTotal(int stockTotal) {
-        Almacen.stockTotal = stockTotal;
+    public void setStockTotal(int stockTotal) {
+        this.stockTotal = stockTotal;
     }
 
-    public static int getStockTotalFresco() {
+    public int getStockTotalFresco() {
         return stockTotalFresco;
     }
 
-    public static void setStockTotalFresco(int stockTotalFresco) {
-        Almacen.stockTotalFresco = stockTotalFresco;
+    public void setStockTotalFresco(int stockTotalFresco) {
+        this.stockTotalFresco = stockTotalFresco;
     }
 
-    public static int getStockFresco() {
+    public int getStockFresco() {
         return stockFresco;
     }
 
-    public static void setStockFresco(int stockFresco) {
-        Almacen.stockFresco = stockFresco;
+    public void setStockFresco(int stockFresco) {
+        this.stockFresco = stockFresco;
     }
 
-    public static int getStockTotalRefrigerado() {
+    public int getStockTotalRefrigerado() {
         return stockTotalRefrigerado;
     }
 
-    public static void setStockTotalRefrigerado(int stockTotalRefrigerado) {
-        Almacen.stockTotalRefrigerado = stockTotalRefrigerado;
+    public void setStockTotalRefrigerado(int stockTotalRefrigerado) {
+        this.stockTotalRefrigerado = stockTotalRefrigerado;
     }
 
-    public static int getStockRefrigerado() {
+    public int getStockRefrigerado() {
         return stockRefrigerado;
     }
 
-    public static void setStockRefrigerado(int stockRefrigerado) {
-        Almacen.stockRefrigerado = stockRefrigerado;
+    public void setStockRefrigerado(int stockRefrigerado) {
+        this.stockRefrigerado = stockRefrigerado;
     }
 
-    public static int getStockTotalCongelado() {
+    public int getStockTotalCongelado() {
         return stockTotalCongelado;
     }
 
-    public static void setStockTotalCongelado(int stockTotalCongelado) {
-        Almacen.stockTotalCongelado = stockTotalCongelado;
+    public void setStockTotalCongelado(int stockTotalCongelado) {
+        this.stockTotalCongelado = stockTotalCongelado;
     }
 
-    public static int getStockCongelado() {
+    public int getStockCongelado() {
         return stockCongelado;
     }
 
-    public static void setStockCongelado(int stockCongelado) {
-        Almacen.stockCongelado = stockCongelado;
+    public void setStockCongelado(int stockCongelado) {
+        this.stockCongelado = stockCongelado;
     }
 
 }
