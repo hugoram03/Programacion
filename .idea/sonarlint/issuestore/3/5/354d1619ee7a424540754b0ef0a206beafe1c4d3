@@ -1,10 +1,10 @@
 
 w
-java:S1192S"UDefine a constant instead of duplicating this literal "Cantidad a retirar: " 3 times.(èÛ¦¦ùÿÿÿÿ8á·³à1
+java:S1192Q"UDefine a constant instead of duplicating this literal "Cantidad a retirar: " 3 times.(èÛ¦¦ùÿÿÿÿ8á·³à1
 
-java:S1192h"lDefine a constant instead of duplicating this literal "Stock disponible superado, stock retirado: " 3 times.(“Ïğ—şÿÿÿÿ8á·³à1
+java:S1192f"lDefine a constant instead of duplicating this literal "Stock disponible superado, stock retirado: " 3 times.(“Ïğ—şÿÿÿÿ8á·³à1
 s
-java:S1192l"QDefine a constant instead of duplicating this literal "Stock retirado: " 3 times.(—µœƒşÿÿÿÿ8á·³à1
+java:S1192j"QDefine a constant instead of duplicating this literal "Stock retirado: " 3 times.(—µœƒşÿÿÿÿ8á·³à1
 i
 java:S1192"GDefine a constant instead of duplicating this literal "Fresco" 3 times.(“ùëŞúÿÿÿÿ8á·³à1
 r
@@ -12,22 +12,14 @@ java:S1192"UDefine a constant instead of duplicating this literal "Stock del p
 i
 java:S1192"LDefine a constant instead of duplicating this literal "Refrigerado" 3 times.(‘°ı”8â·³à1
 k
-java:S1192A"IDefine a constant instead of duplicating this literal " Stock: " 3 times.(æ²ãıÿÿÿÿ8â·³à1
+java:S1192?"IDefine a constant instead of duplicating this literal " Stock: " 3 times.(æ²ãıÿÿÿÿ8â·³à1
 –
-java:S1319"tThe type of "productosAlamcenados" should be an interface such as "List" rather than the implementation "ArrayList".(Ùö×ôùÿÿÿÿ8â·³à1
->
-java:S1643A"Use a StringBuilder instead.(æ²ãıÿÿÿÿ8â·³à1
->
-java:S1643C"Use a StringBuilder instead.(ÎŞ®ôùÿÿÿÿ8â·³à1
->
-java:S1643E"Use a StringBuilder instead.(°¶èéùÿÿÿÿ8â·³à1
+java:S1319	"tThe type of "productosAlamcenados" should be an interface such as "List" rather than the implementation "ArrayList".(Ùö×ôùÿÿÿÿ8â·³à1
 ‚
-java:S1104"`Make productosAlamcenados a static final constant or non-public and provide accessors if needed.(Ùö×ôùÿÿÿÿ8ã·³à1
+java:S1104	"`Make productosAlamcenados a static final constant or non-public and provide accessors if needed.(Ùö×ôùÿÿÿÿ8ã·³à1
 \
-java:S1444":Make this "public static productosAlamcenados" field final(Ùö×ôùÿÿÿÿ8ã·³à1
+java:S1444	":Make this "public static productosAlamcenados" field final(Ùö×ôùÿÿÿÿ8ã·³à1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì©ªÇ8ä·³à1
-?
-java:S2386"Make this member "protected".(Ùö×ôùÿÿÿÿ8ø·³à1
 W
 java:S1118":Add a private constructor to hide the implicit public one.(‰•‘ı8ú·³à1
 L
@@ -37,7 +29,7 @@ G	java:S106 "+Replace this use of System.out by a logger.(¿´´ò8ş·³à1
 G	java:S106%"+Replace this use of System.out by a logger.(¿´´ò8ÿ·³à1
 G	java:S106*"+Replace this use of System.out by a logger.(Çãï®8ÿ·³à1
 G	java:S106."+Replace this use of System.out by a logger.(ñ»½É8ÿ·³à1
-G	java:S106O"+Replace this use of System.out by a logger.(¥éá¹8¸³à1
-L	java:S106S"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1
-L	java:S106W"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1
-L	java:S106\"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1
+G	java:S106M"+Replace this use of System.out by a logger.(¥éá¹8¸³à1
+L	java:S106Q"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1
+L	java:S106U"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1
+L	java:S106Z"+Replace this use of System.out by a logger.(èÛ¦¦ùÿÿÿÿ8‚¸³à1

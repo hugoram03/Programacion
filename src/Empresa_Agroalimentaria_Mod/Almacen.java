@@ -45,8 +45,6 @@ public class Almacen {
         if (((stockFresco + stockRefrigerado + stockCongelado) + stockTotal) > STOCK_MAX) {
             System.out.println("El producto no se puede almacenar por que no hay suficiente espacio");
         } else {
-
-
             stockTotal = stockTotalFresco + stockTotalRefrigerado + stockTotalCongelado;
             productosAlamcenados.add(producto);
         }
