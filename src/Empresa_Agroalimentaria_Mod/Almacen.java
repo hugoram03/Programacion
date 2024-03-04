@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Almacen {
-    static Scanner lector = new Scanner(System.in);
-    public static ArrayList<Producto> productosAlamcenados = new ArrayList<>();
+    private static Scanner lector = new Scanner(System.in);
     private static final int STOCK_MAX = 1000;
+    public static ArrayList<Producto> productosAlamcenados = new ArrayList<>();
     private static int stockTotal;
-    static int stockTotalFresco;
-    static int stockFresco;
-    static int stockTotalRefrigerado;
-    static int stockRefrigerado;
-    static int stockTotalCongelado;
-    static int stockCongelado;
+    private static int stockTotalFresco;
+    private static int stockFresco;
+    private static int stockTotalRefrigerado;
+    private static int stockRefrigerado;
+    private static int stockTotalCongelado;
+    private static int stockCongelado;
 
     public static int getStockTotal() {
         return stockTotal;
