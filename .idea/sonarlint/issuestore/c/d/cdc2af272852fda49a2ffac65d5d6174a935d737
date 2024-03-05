@@ -1,0 +1,18 @@
+
+‚
+java:S14882"`Immediately return this expression instead of assigning it to the temporary variable "division".(úå…‰øÿÿÿÿ8•¥çïà1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³Ûç‹8•¥çïà1
+X	java:S125
+"<This block of commented-out lines of code should be removed.(Àì…ã8¤¥çïà1
+L	java:S106"+Replace this use of System.out by a logger.(Ì¯ÿåüÿÿÿÿ8¤¥çïà1
+G	java:S106"+Replace this use of System.out by a logger.(´÷ó¶8¤¥çïà1
+L	java:S106"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8¤¥çïà1
+G	java:S106"+Replace this use of System.out by a logger.(à‚õ¤8¤¥çïà1
+L	java:S106"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8¤¥çïà1
+G	java:S106"+Replace this use of System.out by a logger.(»¤çù8¤¥çïà1
+L	java:S106""+Replace this use of System.out by a logger.(Ì¯ÿåüÿÿÿÿ8¤¥çïà1
+G	java:S106#"+Replace this use of System.out by a logger.(´÷ó¶8¤¥çïà1
+L	java:S106%"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8´¥çïà1
+G	java:S106'"+Replace this use of System.out by a logger.(à‚õ¤8´¥çïà1
+L	java:S106)"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8ËÁéïà1
+G	java:S106+"+Replace this use of System.out by a logger.(»¤çù8ËÁéïà1

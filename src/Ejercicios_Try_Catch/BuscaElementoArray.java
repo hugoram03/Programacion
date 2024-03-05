@@ -58,8 +58,6 @@ public class BuscaElementoArray {
         }
             int numeroBuscado = Integer.parseInt(pedirBuscarNumero);
 
-
-
         for (int numeroEncontrado : numerosCadena) {
             if (numeroBuscado == numeroEncontrado) {
                 encontrado = true;

@@ -1,0 +1,13 @@
+
+9
+java:S1643"Use a StringBuilder instead.(ÕôŞŞ8„«‘îà1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³Ûç‹8„«‘îà1
+G	java:S106"+Replace this use of System.out by a logger.(æä§î8³«‘îà1
+G	java:S106"+Replace this use of System.out by a logger.(Ä¥‹Ú8³«‘îà1
+L	java:S106"+Replace this use of System.out by a logger.(ˆÑèÏüÿÿÿÿ8³«‘îà1
+G	java:S106"+Replace this use of System.out by a logger.(ÚÂâ8³«‘îà1
+{
+java:S2142!"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8³«‘îà1
+L	java:S106""+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8³«‘îà1
+:
+java:S2119,"Save and re-use this "Random".(¼İÅf8³«‘îà1
