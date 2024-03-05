@@ -14,7 +14,7 @@ public class Division {
     public static void division() {
 
         try {
-            System.out.println("DIVISION");
+            System.out.println("DIVISION DE NUMEROS ENTEROS");
             System.out.print("Introduce operador 1: ");
             int op1 = lector.nextInt();
             System.out.print("Introduce operador 2: ");
@@ -31,7 +31,7 @@ public class Division {
 
     public static void division1() {
         try {
-            System.out.println("DIVISION");
+            System.out.println("DIVISION DE NUMEROS ENTEROS");
             System.out.print("Introduce operador 1: ");
             int op1 = lector.nextInt();
             System.out.print("Introduce operador 2: ");
