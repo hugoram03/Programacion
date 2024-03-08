@@ -1,0 +1,10 @@
+
+D
+java:S5411i"(Use a primitive boolean expression here.(î»®?8äñÑçá1
+J
+java:S5411|"(Use a primitive boolean expression here.(…Æñúÿÿÿÿ8äñÑçá1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õ®˜Ê8äñÑçá1
+o	java:S100d"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖŒ­“ÿÿÿÿÿ8ôñÑçá1
+L	java:S106w"+Replace this use of System.out by a logger.(Ô½éƒúÿÿÿÿ8“òÑçá1
+h
+java:S1128"FRemove this unused import 'java.util.IllegalFormatCodePointException'.(¹®öÉüÿÿÿÿ8“òÑçá1

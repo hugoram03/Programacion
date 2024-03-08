@@ -1,6 +1,8 @@
 package Ejercicios_Try_Catch.UsaCasa.oovv;
 
 
+import java.util.IllegalFormatCodePointException;
+
 public class Casa {
 
     private String calle;
@@ -16,7 +18,7 @@ public class Casa {
         contCasas++;
     }
 
-    public Casa(String calle, String numero, String poblacion, double superficie, boolean garaje, int edadCasa) {
+    public Casa(String calle, String numero, String poblacion, double superficie, boolean garaje, int edadCasa) throws IllegalArgumentException{
         this.calle = calle;
         this.numero = numero;
         this.poblacion = poblacion;
@@ -24,6 +26,12 @@ public class Casa {
         this.garaje = garaje;
         this.edadCasa = edadCasa;
         incrementaContadorCasa();
+        if (superficie < SUPERFICIE_MINIMA){
+            throw new IllegalArgumentException("La superficie no puede ser menor a 43.5");
+        }
+        if (edadCasa < 0){
+            throw new IllegalArgumentException("La edad de la casa no puede ser inferior o igual a 0");
+        }
     }
 
     public Casa(String calle, String numero, String poblacion) {

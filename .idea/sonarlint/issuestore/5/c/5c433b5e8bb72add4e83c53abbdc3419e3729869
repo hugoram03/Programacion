@@ -1,0 +1,23 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯é‘°øÿÿÿÿ8Ãº×çá1
+\
+java:S2259"?A "NullPointerException" could be thrown; "n" is nullable here.(¦ˆ˜‘8¾·Øçá1
+[
+java:S1854"9Remove this useless assignment to local variable "casa1".(‚¡Šÿÿÿÿÿ8Óº×çá1
+L
+java:S1481"*Remove this unused "casa1" local variable.(‚¡Šÿÿÿÿÿ8Óº×çá1
+L	java:S106"+Replace this use of System.out by a logger.(—ˆ Ãıÿÿÿÿ8Óº×çá1
+G	java:S106"+Replace this use of System.out by a logger.(­öë©8Óº×çá1
+G	java:S106"+Replace this use of System.out by a logger.(—Êû‘8Óº×çá1
+G	java:S106"+Replace this use of System.out by a logger.(á°áÂ8Óº×çá1
+L	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8Óº×çá1
+G	java:S106"+Replace this use of System.out by a logger.(İ¶Ò8Óº×çá1
+G	java:S106"+Replace this use of System.out by a logger.(¦ˆ˜‘8Óº×çá1
+G	java:S106""+Replace this use of System.out by a logger.(”ğƒñ8Óº×çá1
+L	java:S106$"+Replace this use of System.out by a logger.(Ğâ¤Âüÿÿÿÿ8Óº×çá1
+L	java:S106&"+Replace this use of System.out by a logger.(ÿÎìîüÿÿÿÿ8Óº×çá1
+G	java:S106("+Replace this use of System.out by a logger.(¶“­¹8Óº×çá1
+G	java:S106*"+Replace this use of System.out by a logger.(¬³8Óº×çá1
+G	java:S106,"+Replace this use of System.out by a logger.(úàìƒ8Óº×çá1
+L	java:S106."+Replace this use of System.out by a logger.(±÷íûÿÿÿÿ8Óº×çá1
+L	java:S1061"+Replace this use of System.out by a logger.(êÅ öıÿÿÿÿ8Óº×çá1

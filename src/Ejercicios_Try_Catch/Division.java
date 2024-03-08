@@ -39,15 +39,18 @@ public class Division {
             System.out.println(dividir(op1, op2));
         } catch (InputMismatchException e) {
             System.out.println("Operador no valido");
-        } catch (ArithmeticException ex) {
-            System.out.println("No es posible dividir por 0");
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
         } finally {
             lector.close();
         }
     }
 
-    private static int dividir(int op1, int op2) {
-        int division = op1 / op2;
-        return division;
+    private static int dividir(int op1, int op2) throws IllegalArgumentException{
+        if (op2 == 0) {
+            throw new IllegalArgumentException("El denomindador ndebe ser distinto a 0");
+        }
+        int resultado = op1 / op2;
+        return resultado;
     }
 }
