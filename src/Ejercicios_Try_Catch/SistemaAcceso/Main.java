@@ -6,6 +6,7 @@ public class Main {
     static Scanner lector = new Scanner(System.in);
     static Usuario hugo = new Usuario("hugo", "1234");
     static Usuario adrian = new Usuario("adrian", "4321");
+
     public static void main(String[] args) throws MaEx {
         System.out.println("|Sistema de acceso|");
         try {
@@ -16,7 +17,7 @@ public class Main {
         }
     }
 
-    private static void menu(Scanner lector) {
+    private static void menu(Scanner lector) throws MaEx {
         int opcion = 0;
         do {
             System.out.println("Que desea hacer? (0 - salir | 1 - cambiar contraseña)");
@@ -25,15 +26,10 @@ public class Main {
                 case 0:
                     break;
                 case 1:
-                    try {
-                        cambiarContraseña(hugo);
-                    } catch (MaEx ex){
-                        System.out.println(ex.getMessage());
-                    }
+                    cambiarContraseña(hugo);
                     break;
                 default:
-                    System.out.println("Opcion erronea");
-                    break;
+                    throw new MaEx("Opcion incorrecta el valor tiene que ser 0 o 1");
             }
         } while (opcion != 0);
     }
@@ -43,10 +39,9 @@ public class Main {
         String nuevaContraseña = lector.next();
         if (nuevaContraseña.equals(usuario.getContraseña())) {
             throw new MaEx("La contraseña a cambiar no puede ser la misma que ya tenia");
-        } else {
-            usuario.setContraseña(nuevaContraseña);
-            System.out.println("Contraseña cambiada con exito!");
         }
+        usuario.setContraseña(nuevaContraseña);
+        System.out.println("Contraseña cambiada con exito!");
     }
 
     private static void verificarAcceso(Usuario u1) throws MaEx {
@@ -55,12 +50,9 @@ public class Main {
         String usuario = lector.next();
         System.out.print("Introduce la contraseña: ");
         String contraseña = lector.next();
-        if (!usuario.equals(u1.getUsuario())) {
-            throw new MaEx("El usuario incorrecto");
-        } else if (!contraseña.equals(u1.getContraseña())) {
-            throw new MaEx("La contraseña es incorrecta");
-        } else {
-            System.out.println("Bienvenido " + u1.getUsuario());
+        if (!usuario.equals(u1.getUsuario()) || !contraseña.equals(u1.getContraseña())) {
+            throw new MaEx("Usuario o contraseña incorrecto");
         }
+        System.out.println("Bienvenido " + u1.getUsuario());
     }
 }

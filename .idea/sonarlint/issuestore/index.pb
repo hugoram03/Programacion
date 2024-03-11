@@ -3237,3 +3237,9 @@ Q.idea/sonarlint/securityhotspotstore/d/2/d2620494da01cb6ae2dedcb4cbd198076253c9
 Q.idea/sonarlint/securityhotspotstore/b/d/bdf92e3e342beebad05522bff15f06f371e1a38c,a\f\af4057ca8097e087aeb68b796c156762e2c7445b
 Å
 Q.idea/sonarlint/securityhotspotstore/b/d/bdf8f2f729e9b193668de9b6c7e12cb65b946081,0\0\008a1a7d96777a4b478d5947fa9c2bfd1eb3f5fc
+`
+0src/Ejercicios_Try_Catch/SistemaAcceso/Main.java,5\e\5eaec4c96159715076e46d96f376fe8b4f67a9b7
+c
+3src/Ejercicios_Try_Catch/SistemaAcceso/Usuario.java,1\8\1810192ee14a15e28032b276a79fb421dc2d9b38
+`
+0src/Ejercicios_Try_Catch/SistemaAcceso/MaEx.java,2\8\2832e351e1828dfa682b0971d8c1f07706b0d3a8
