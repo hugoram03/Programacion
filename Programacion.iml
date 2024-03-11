@@ -7,6 +7,7 @@
     </content>
     <orderEntry type="jdk" jdkName="corretto-17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="log4j-api-2.23.1" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="52f1ef38-58b7-4e71-bacf-874e89ea877a" />
