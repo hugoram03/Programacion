@@ -3245,3 +3245,7 @@ c
 0src/Ejercicios_Try_Catch/SistemaAcceso/MaEx.java,2\8\2832e351e1828dfa682b0971d8c1f07706b0d3a8
 7
 app.log,a\0\a04cdc1b813999384ef385ac5191cbe69e844545
+E
+src/Ficheros/algo.txt,4\b\4bd3cc9e7f01664d9d287ed34f7205b3ca333ae5
+F
+src/Ficheros/Main.java,1\6\16bacc215b5df3f9ef88236a6c68cc088e5c957d
