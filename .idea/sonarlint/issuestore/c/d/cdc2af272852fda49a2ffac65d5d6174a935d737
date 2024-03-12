@@ -1,18 +1,23 @@
 
 ~
-java:S14885"aImmediately return this expression instead of assigning it to the temporary variable "resultado".(¶£¨Ð8¥åªçá1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³Ûç‹8µåªçá1
-X	java:S125
-"<This block of commented-out lines of code should be removed.(Àì…ã8Ååªçá1
-G	java:S106"+Replace this use of System.out by a logger.(îäèÑ8Ååªçá1
-G	java:S106"+Replace this use of System.out by a logger.(´÷ó¶8Ååªçá1
-L	java:S106"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8Ååªçá1
-G	java:S106"+Replace this use of System.out by a logger.(à‚õ¤8Ååªçá1
-L	java:S106"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8Ååªçá1
-G	java:S106"+Replace this use of System.out by a logger.(»¤çù8Ååªçá1
-G	java:S106""+Replace this use of System.out by a logger.(îäèÑ8Ååªçá1
-G	java:S106#"+Replace this use of System.out by a logger.(´÷ó¶8Ååªçá1
-L	java:S106%"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8Ååªçá1
-G	java:S106'"+Replace this use of System.out by a logger.(à‚õ¤8Ååªçá1
-L	java:S106)"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8Ååªçá1
-L	java:S106+"+Replace this use of System.out by a logger.(ý™øøÿÿÿÿ8Ååªçá1
+java:S1488N"aImmediately return this expression instead of assigning it to the temporary variable "resultado".(¶£¨Ð8¢ƒÔã1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³Ûç‹8¢ƒÔã1
+s
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬¥Éüÿÿÿÿ8²ƒÔã1
+X	java:S125"<This block of commented-out lines of code should be removed.(Àì…ã8°ÕÖã1
+G	java:S106"+Replace this use of System.out by a logger.(îäèÑ8²ƒÔã1
+G	java:S106"+Replace this use of System.out by a logger.(´÷ó¶8²ƒÔã1
+L	java:S106"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8²ƒÔã1
+G	java:S106"+Replace this use of System.out by a logger.(à‚õ¤8²ƒÔã1
+L	java:S106"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8²ƒÔã1
+G	java:S106("+Replace this use of System.out by a logger.(îäèÑ8²ƒÔã1
+G	java:S106)"+Replace this use of System.out by a logger.(´÷ó¶8²ƒÔã1
+L	java:S106+"+Replace this use of System.out by a logger.(ùÂýÿÿÿÿ8ÁƒÔã1
+G	java:S106-"+Replace this use of System.out by a logger.(à‚õ¤8ÁƒÔã1
+L	java:S106/"+Replace this use of System.out by a logger.(¹üð¡ùÿÿÿÿ8ÁƒÔã1
+L	java:S1061"+Replace this use of System.out by a logger.(ý™øøÿÿÿÿ8ÁƒÔã1
+F	java:S1069"+Replace this use of System.out by a logger.(´×€8ÁƒÔã1
+G	java:S106;"+Replace this use of System.out by a logger.(åÛˆ¥8ÁƒÔã1
+G	java:S106?"+Replace this use of System.out by a logger.(Ýîº8ÁƒÔã1
+X	java:S125C"<This block of commented-out lines of code should be removed.(Ž öÛ8ÁƒÔã1
+G	java:S106E"+Replace this use of System.out by a logger.(¼ŠŽû8ÁƒÔã1

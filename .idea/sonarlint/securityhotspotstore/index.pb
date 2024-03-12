@@ -3243,3 +3243,5 @@ c
 3src/Ejercicios_Try_Catch/SistemaAcceso/Usuario.java,1\8\1810192ee14a15e28032b276a79fb421dc2d9b38
 `
 0src/Ejercicios_Try_Catch/SistemaAcceso/MaEx.java,2\8\2832e351e1828dfa682b0971d8c1f07706b0d3a8
+7
+app.log,a\0\a04cdc1b813999384ef385ac5191cbe69e844545

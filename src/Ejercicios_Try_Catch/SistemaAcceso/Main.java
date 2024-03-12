@@ -3,6 +3,7 @@ package Ejercicios_Try_Catch.SistemaAcceso;
 import java.util.Scanner;
 
 public class Main {
+
     static Scanner lector = new Scanner(System.in);
     static Usuario hugo = new Usuario("hugo", "1234");
     static Usuario adrian = new Usuario("adrian", "4321");

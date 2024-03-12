@@ -1,14 +1,20 @@
 package Ejercicios_Try_Catch;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class Division {
     static Scanner lector = new Scanner(System.in);
+    private static Logger LOGGER = LogManager.getRootLogger();
 
     public static void main(String[] args) {
         //division();
-        division1();
+        //division1();
+        division2();
     }
 
     public static void division() {
@@ -23,7 +29,7 @@ public class Division {
         } catch (InputMismatchException e) {
             System.out.println("Operador no valido");
         } catch (ArithmeticException ex) {
-            System.out.println("No es posible dividir por 0");
+            LOGGER.error("Error aritmetico no se puede dividir por 0");
         } finally {
             lector.close();
         }
@@ -46,9 +52,28 @@ public class Division {
         }
     }
 
-    private static int dividir(int op1, int op2) throws IllegalArgumentException{
+    public static void division2() {
+        try {
+            System.out.print("Ingrese el numerador: ");
+            int numerador = lector.nextInt();
+            System.out.print("Ingrese el denominador: ");
+            int denominador = lector.nextInt();
+
+            int resultado = dividir(numerador, denominador);
+            System.out.println("El resultado es: " + resultado);
+        } catch (ArithmeticException e) {
+            LOGGER.error("¡Error aritmético! No se puede dividir por cero.");
+            LOGGER.debug("prueba");
+            //System.out.println("¡Error aritmético! No se puede dividir por cero.");
+        } finally {
+            System.out.println("Se ha ejecutado el bloque finally.");
+            lector.close(); // Cerramos el Scanner para liberar recursos
+        }
+    }
+
+    private static int dividir(int op1, int op2) throws IllegalArgumentException {
         if (op2 == 0) {
-            throw new IllegalArgumentException("El denomindador ndebe ser distinto a 0");
+            throw new IllegalArgumentException("El denomindador debe ser distinto a 0");
         }
         int resultado = op1 / op2;
         return resultado;
