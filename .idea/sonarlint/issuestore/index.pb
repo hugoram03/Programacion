@@ -3249,3 +3249,8 @@ E
 src/Ficheros/algo.txt,4\b\4bd3cc9e7f01664d9d287ed34f7205b3ca333ae5
 F
 src/Ficheros/Main.java,1\6\16bacc215b5df3f9ef88236a6c68cc088e5c957d
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+H
+src/Ficheros/fichero.txt,0\2\02f4d493d11ae1c3507173b86b841e6efc00b999
