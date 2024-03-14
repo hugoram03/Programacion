@@ -1,15 +1,17 @@
 package Ficheros;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File fichero1 = new File("fichero.txt");
-        File fichero2 = new File("C:\\Users\\huram\\IdeaProjects\\Programacion\\Fichero\\fichero.txt");
-        System.out.println(fichero1.getAbsolutePath());
-        System.out.println(fichero1.exists());
-        System.out.println(fichero1.canRead());
-        System.out.println(fichero2.canRead());
+        File fichero2 = new File("C:\\Users\\adri1\\Programacion\\Tema 6 - POO\\Programacion\\fichero.txt");
+        fichero1.createNewFile();
+        fichero2.createNewFile();
+
+        System.out.println("Existe el fichero 1: " + fichero1.exists());
+        System.out.println("Existe el fichero 2: " + fichero2.exists());
 
     }
 }
