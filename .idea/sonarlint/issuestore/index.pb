@@ -3245,8 +3245,6 @@ c
 0src/Ejercicios_Try_Catch/SistemaAcceso/MaEx.java,2\8\2832e351e1828dfa682b0971d8c1f07706b0d3a8
 7
 app.log,a\0\a04cdc1b813999384ef385ac5191cbe69e844545
-E
-src/Ficheros/algo.txt,4\b\4bd3cc9e7f01664d9d287ed34f7205b3ca333ae5
 F
 src/Ficheros/Main.java,1\6\16bacc215b5df3f9ef88236a6c68cc088e5c957d
 :
@@ -3254,3 +3252,25 @@ F
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 H
 src/Ficheros/fichero.txt,0\2\02f4d493d11ae1c3507173b86b841e6efc00b999
+O
+src/Ficheros/ficheroPrueba2.txt,4\4\44f11576a1aaeba98d40bc389516fc93a331c1b5
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero6.txt,9\7\97cdb982163628e444c8e758237882a393ec2ebe
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero7.txt,9\1\9117835dac97619b1ef243251286b9b7e79e066b
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero9.txt,d\2\d296f5609c472efb2a5c628cd93c6378065812d2
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero1.txt,0\9\095ef376ea9372a6a6e4029fd503bcfe2868125f
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero4.txt,a\a\aa744a81d5bd6b5903ca2dfce722bf2d78b730ab
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero3.txt,f\2\f22499b75ed07d66e73dc3a50e9ace42b4b5a488
+i
+9src/Ficheros/directorio1/listaFicheros/listaFichero10.txt,d\2\d283ab8bbb986ed552d54f6c1eecd369233c7034
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero5.txt,c\8\c87906cb93dc22326f01e11d86036821de9f6e60
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero8.txt,5\0\50dcd7b1bb696491d178a78d05c90e8362c05bd0
+h
+8src/Ficheros/directorio1/listaFicheros/listaFichero2.txt,1\1\11c4a07ecb889deb321a7b0ea85197da4adf69ca
