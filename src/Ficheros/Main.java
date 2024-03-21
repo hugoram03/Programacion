@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -20,8 +19,6 @@ public class Main {
         File directorio1 = new File("src\\Ficheros\\directorio1");
         File listaFicheros = new File("src\\Ficheros\\directorio1\\listaFicheros");
         File fichero5 = new File("src\\Ficheros\\ficheroPrueba2.txt");
-
-
 
         try {
             fichero1.createNewFile();

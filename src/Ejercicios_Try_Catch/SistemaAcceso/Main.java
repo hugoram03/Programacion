@@ -1,5 +1,8 @@
 package Ejercicios_Try_Catch.SistemaAcceso;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -7,14 +10,22 @@ public class Main {
     static Scanner lector = new Scanner(System.in);
     static Usuario hugo = new Usuario("hugo", "1234");
     static Usuario adrian = new Usuario("adrian", "4321");
+    static File nuevosUsuarios = new File("src\\Ejercicios_Try_Catch\\SistemaAcceso\\nuevosUsuarios.txt");
 
-    public static void main(String[] args) throws MaEx {
+    public static void main(String[] args) throws MaEx, IOException {
+
         System.out.println("|Sistema de acceso|");
-        try {
-            verificarAcceso(hugo);
-            menu(lector);
-        } catch (MaEx e) {
-            System.out.println(e.getMessage());
+        System.out.println("Estas registrado en el sistema de acceso? (si/no)");
+        String opcion = lector.nextLine();
+        if (opcion.equalsIgnoreCase("si")) {
+            try {
+                verificarAcceso(hugo);
+                menu(lector);
+            } catch (MaEx e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            añadirUsuarioNuevo();
         }
     }
 
@@ -55,5 +66,16 @@ public class Main {
             throw new MaEx("Usuario o contraseña incorrecto");
         }
         System.out.println("Bienvenido " + u1.getUsuario());
+    }
+
+    public static void añadirUsuarioNuevo() throws IOException {
+        FileWriter fileWriter = new FileWriter(nuevosUsuarios, true);
+        System.out.println("Rellena estos datos para registrarte.");
+        System.out.print("Usuario: ");
+        String usuario = lector.nextLine();
+        System.out.print("Contraseña: ");
+        String contraseña = lector.nextLine();
+        fileWriter.write("Usuario: " + usuario + " Contraseña: " + contraseña + "\n");
+        fileWriter.close();
     }
 }
