@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
@@ -73,12 +74,16 @@ public class Main {
         leeFichero(creaFichero);
         cadena.append("\nEscribiendo en fichero inexistente");
         escribeFicheroSinExistencia();
+        cadena.append("\nUso de PrintWriter");
         usaPrintWriter();
-
-
-
+        cadena.append("\nUso de InputStream");
+        usaInputStream();
+        cadena.append("\nUso de OutputStream");
+        usaOutputStream();
 
         System.out.println(cadena);
+
+        leeYEscribe();
     }
 
     public static void escribeFichero(String texto, File fichero) throws IOException {
@@ -115,7 +120,31 @@ public class Main {
         printWriter.format(" dia $d", caracter);
         printWriter.close();
     }
-    public static void usaScanner(){
-
+    public static void usaInputStream() throws IOException {
+        File ficheroPrint = new File("src\\Ficheros\\ficheroStream.txt");
+        DataOutputStream out = new DataOutputStream(new FileOutputStream(ficheroPrint));
+        for (int i = 1; i <= 50; i++) {
+            out.writeUTF("\n" + i);
+        }
+        out.close();
+    }
+    public static void usaOutputStream() throws IOException {
+        File ficheroPrint = new File("src\\Ficheros\\ficheroStream.txt");
+        DataInputStream in = new DataInputStream(new FileInputStream(ficheroPrint));
+        for (int i = 1; i <= 50; i++) {
+            cadena.append(in.readUTF());
+        }
+    }
+    public static void leeYEscribe() throws IOException {
+        Scanner lector = new Scanner(System.in);
+        String texto = "";
+        File fichero = new File("src\\Ficheros\\directorio1\\escritura.txt");
+        FileWriter fileWriter = new FileWriter(fichero, true);
+        while (!texto.equalsIgnoreCase("fin")) {
+            fileWriter.write(texto + " ");
+            System.out.println("Escribe el texto que quieras para añadirlo a el fichero 'escritura' ('fin' para acabar el programa) :");
+            texto = lector.nextLine();
+        }
+        fileWriter.close();
     }
 }
