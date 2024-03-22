@@ -61,6 +61,7 @@ public class Main {
             File fichero = new File(nombreFichero);
             fichero.createNewFile();
         }
+
         cadena.append("\nUso de FileWriter");
         File creaFichero = new File("src\\Ficheros\\creaFichero.txt");
         creaFichero.createNewFile();
@@ -88,11 +89,13 @@ public class Main {
         fileWriter.write(texto);
         fileWriter.close();
     }
+
     public static void escribeFichero2(String texto, File fichero) throws IOException {
         FileWriter fileWriter = new FileWriter(fichero, true);
         fileWriter.write(texto);
         fileWriter.close();
     }
+
     public static void leeFichero(File fichero) throws IOException {
         FileReader fileReader = new FileReader(fichero);
         int caracter;
@@ -102,12 +105,14 @@ public class Main {
         }
         fileReader.close();
     }
+
     public static void escribeFicheroSinExistencia() throws IOException {
         File ficheroNoExiste = new File("src\\Ficheros\\ficheroNoExiste.txt");
         FileWriter fileWriter = new FileWriter(ficheroNoExiste);
         fileWriter.write("Hola Mundo");
         fileWriter.close();
     }
+
     public static void usaPrintWriter() throws IOException {
         int caracter = 10;
         File ficheroPrint = new File("src\\Ficheros\\ficheroPrint.txt");
@@ -117,6 +122,12 @@ public class Main {
         printWriter.format(" dia $d", caracter);
         printWriter.close();
     }
+
+    public static void usaBufferedWriter() {
+        File ficheroBuffered = new File("src\\Ficheros\\ficheroBuffered.txt");
+        BufferedWriter writer = new BufferedWriter();
+    }
+
     public static void usaInputStream() throws IOException {
         File ficheroPrint = new File("src\\Ficheros\\ficheroStream.txt");
         DataOutputStream out = new DataOutputStream(new FileOutputStream(ficheroPrint));
@@ -125,6 +136,7 @@ public class Main {
         }
         out.close();
     }
+
     public static void usaOutputStream() throws IOException {
         File ficheroPrint = new File("src\\Ficheros\\ficheroStream.txt");
         DataInputStream in = new DataInputStream(new FileInputStream(ficheroPrint));
@@ -132,6 +144,7 @@ public class Main {
             cadena.append(in.readUTF());
         }
     }
+
     public static void leeYEscribe() throws IOException {
         Scanner lector = new Scanner(System.in);
         String texto = "";
