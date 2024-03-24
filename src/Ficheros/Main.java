@@ -74,6 +74,10 @@ public class Main {
         escribeFicheroSinExistencia();
         cadena.append("\nUso de PrintWriter");
         usaPrintWriter();
+        cadena.append("\nUso de Buffered Writer");
+        usaBufferedWriter();
+        cadena.append("\nUso de Buffered Reader");
+        usaBufferedReader();
         cadena.append("\nUso de InputStream");
         usaInputStream();
         cadena.append("\nUso de OutputStream");
@@ -123,9 +127,25 @@ public class Main {
         printWriter.close();
     }
 
-    public static void usaBufferedWriter() {
+    public static void usaBufferedWriter() throws IOException {
         File ficheroBuffered = new File("src\\Ficheros\\ficheroBuffered.txt");
-        BufferedWriter writer = new BufferedWriter();
+        FileWriter fileWriter = new FileWriter(ficheroBuffered);
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+        for (int i = 1; i <= 50; i++) {
+            writer.write("Esta es la linea: " + i);
+            writer.newLine();
+        }
+        writer.close();
+    }
+    public static void usaBufferedReader() throws IOException {
+        File ficheroBuffered = new File("src\\Ficheros\\ficheroBuffered.txt");
+        FileReader fileReader = new FileReader(ficheroBuffered);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String linea;
+        while ((linea = bufferedReader.readLine()) != null){
+            cadena.append("\n" + linea);
+        }
+        bufferedReader.close();
     }
 
     public static void usaInputStream() throws IOException {
