@@ -8,74 +8,66 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner lector = new Scanner(System.in);
-    static Usuario hugo = new Usuario("hugo", "1234");
-    static Usuario adrian = new Usuario("adrian", "4321");
     static File nuevosUsuarios = new File("src\\Ejercicios_Try_Catch\\SistemaAcceso\\nuevosUsuarios.txt");
 
     public static void main(String[] args) throws MaEx, IOException {
-
-        System.out.println("|Sistema de acceso|");
-        System.out.println("Estas registrado en el sistema de acceso? (si/no)");
-        String opcion = lector.nextLine();
-        if (opcion.equalsIgnoreCase("si")) {
-            try {
-                verificarAcceso(hugo);
-                menu(lector);
-            } catch (MaEx e) {
-                System.out.println(e.getMessage());
-            }
-        } else {
-            añadirUsuarioNuevo();
-        }
-    }
-
-    private static void menu(Scanner lector) throws MaEx {
-        int opcion = 0;
+        String opcion;
         do {
-            System.out.println("Que desea hacer? (0 - salir | 1 - cambiar contraseña)");
-            opcion = lector.nextInt();
-            switch (opcion) {
-                case 0:
-                    break;
-                case 1:
-                    cambiarContraseña(hugo);
-                    break;
-                default:
-                    throw new MaEx("Opcion incorrecta el valor tiene que ser 0 o 1");
+            System.out.println("|Sistema de acceso|");
+            System.out.println("Estas registrado en el sistema de acceso? (si/no) ('fin' para salir)");
+            opcion = lector.next();
+            if (opcion.equalsIgnoreCase("si")) {
+                System.out.print("Usuario: ");
+                String usuario = lector.next();
+                System.out.print("Contraseña: ");
+                String contraseña = lector.next();
+                try {
+                    if (Sistema.verificarAcceso(usuario, contraseña)) {
+                        menu(lector, usuario, contraseña);
+                    }
+                } catch (MaEx e) {
+                    System.out.println(e.getMessage());
+                }
+            } else if (opcion.equalsIgnoreCase("no")){
+                añadirUsuarioNuevo();
             }
-        } while (opcion != 0);
+        } while (!opcion.equalsIgnoreCase("fin"));
     }
 
-    private static void cambiarContraseña(Usuario usuario) throws MaEx {
-        System.out.print("Introduzca la nueva contraseña: ");
-        String nuevaContraseña = lector.next();
-        if (nuevaContraseña.equals(usuario.getContraseña())) {
-            throw new MaEx("La contraseña a cambiar no puede ser la misma que ya tenia");
+        private static void menu (Scanner lector, String usuario, String contrasena) throws MaEx {
+            int opcion = 0;
+            do {
+                System.out.println("Que desea hacer? (0 - salir | 1 - cambiar contraseña)");
+                opcion = lector.nextInt();
+                switch (opcion) {
+                    case 0:
+                        break;
+                    case 1:
+                        String nuevaContraseña;
+                        do {
+                            System.out.println("Intrpduce la nueva Contraseña: ");
+                            nuevaContraseña = lector.next();
+                            if (nuevaContraseña.equals(contrasena)) {
+                                System.out.println("La nueva contraseña no puede ser la misma que la que ya tenias, vuelve a introducir la contraseña otra vez");
+                            }
+                        } while (contrasena.equals(nuevaContraseña));
+                        Sistema.cambiarContraseña(usuario,nuevaContraseña);
+                        break;
+                    default:
+                        throw new MaEx("Opcion incorrecta el valor tiene que ser 0 o 1");
+                }
+            } while (opcion != 0);
         }
-        usuario.setContraseña(nuevaContraseña);
-        System.out.println("Contraseña cambiada con exito!");
-    }
 
-    private static void verificarAcceso(Usuario u1) throws MaEx {
-        System.out.println();
-        System.out.print("Introduce el usuario: ");
-        String usuario = lector.next();
-        System.out.print("Introduce la contraseña: ");
-        String contraseña = lector.next();
-        if (!usuario.equals(u1.getUsuario()) || !contraseña.equals(u1.getContraseña())) {
-            throw new MaEx("Usuario o contraseña incorrecto");
+        public static void añadirUsuarioNuevo () throws IOException {
+            FileWriter fileWriter = new FileWriter(nuevosUsuarios, true);
+            System.out.println("Rellena estos datos para registrarte.");
+            System.out.print("Usuario: ");
+            String usuario = lector.next();
+            System.out.print("Contraseña: ");
+            String contraseña = lector.next();
+            Sistema.usuarios.add(new Usuario(usuario, contraseña));
+            fileWriter.write("Usuario: " + usuario + " Contraseña: " + contraseña + "\n");
+            fileWriter.close();
         }
-        System.out.println("Bienvenido " + u1.getUsuario());
     }
-
-    public static void añadirUsuarioNuevo() throws IOException {
-        FileWriter fileWriter = new FileWriter(nuevosUsuarios, true);
-        System.out.println("Rellena estos datos para registrarte.");
-        System.out.print("Usuario: ");
-        String usuario = lector.nextLine();
-        System.out.print("Contraseña: ");
-        String contraseña = lector.nextLine();
-        fileWriter.write("Usuario: " + usuario + " Contraseña: " + contraseña + "\n");
-        fileWriter.close();
-    }
-}

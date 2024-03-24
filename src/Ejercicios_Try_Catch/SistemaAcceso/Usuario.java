@@ -1,7 +1,6 @@
 package Ejercicios_Try_Catch.SistemaAcceso;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Usuario {
     private String usuario;
