@@ -66,6 +66,5 @@ public class Main {
         System.out.print("Contraseña: ");
         String contraseña = lector.next();
         Sistema.usuarios.add(new Usuario(usuario, contraseña));
-
     }
 }
