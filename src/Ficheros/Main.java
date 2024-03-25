@@ -74,6 +74,8 @@ public class Main {
         escribeFicheroSinExistencia();
         cadena.append("\nUso de PrintWriter");
         usaPrintWriter();
+        cadena.append("\nUso de Scanner");
+        usaScanner();
         cadena.append("\nUso de Buffered Writer");
         usaBufferedWriter();
         cadena.append("\nUso de Buffered Reader");
@@ -122,9 +124,27 @@ public class Main {
         File ficheroPrint = new File("src\\Ficheros\\ficheroPrint.txt");
         PrintWriter printWriter = new PrintWriter(ficheroPrint);
         printWriter.println("Hola");
-        printWriter.print("mundo");
-        printWriter.format(" dia $d", caracter);
+        printWriter.print("mundo ");
+        printWriter.format("dia %d", caracter);
+        printWriter.println("\n" + 12);
+        printWriter.println(11.5);
         printWriter.close();
+    }
+
+    public static void usaScanner() throws FileNotFoundException {
+        File ficheroPrint = new File("src\\Ficheros\\ficheroPrint.txt");
+        FileReader fileReader = new FileReader(ficheroPrint);
+        Scanner scanner = new Scanner(new FileReader(ficheroPrint));
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                cadena.append("\nEntero: " + scanner.nextInt());
+            } else if (scanner.hasNextDouble()) {
+                cadena.append("\nDouble: " + scanner.nextDouble());
+            } else {
+                cadena.append("\n" + scanner.nextLine());
+            }
+        }
+        scanner.close();
     }
 
     public static void usaBufferedWriter() throws IOException {
@@ -137,12 +157,13 @@ public class Main {
         }
         writer.close();
     }
+
     public static void usaBufferedReader() throws IOException {
         File ficheroBuffered = new File("src\\Ficheros\\ficheroBuffered.txt");
         FileReader fileReader = new FileReader(ficheroBuffered);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String linea;
-        while ((linea = bufferedReader.readLine()) != null){
+        while ((linea = bufferedReader.readLine()) != null) {
             cadena.append("\n" + linea);
         }
         bufferedReader.close();

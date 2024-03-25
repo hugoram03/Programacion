@@ -1,2 +1,4 @@
 Hola
-mundo dia $d
+mundo dia 10
+12
+11.5
