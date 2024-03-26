@@ -1,4 +1,4 @@
-package SIstema_Encriptacion;
+package Sistema_Encriptacion;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +11,6 @@ public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
     static Scanner lector = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
-
         String opcion;
         try {
             do {
@@ -23,10 +22,10 @@ public class Main {
                 opcion = lector.nextLine();
                 switch (opcion) {
                     case "1":
-                        Sistema.encriptar(preguntaFichero(), palabraSecreta());
+                        Sistema.encriptar(preguntaFichero(), ObtenerPalabraSecreta());
                         break;
                     case "2":
-                        Sistema.desencriptar(preguntaFichero(), palabraSecreta());
+                        Sistema.desencriptar(preguntaFichero(), ObtenerPalabraSecreta());
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
@@ -48,7 +47,7 @@ public class Main {
         } while (!ficheroAEncriptar.canRead());
         return ficheroAEncriptar;
     }
-    private static String palabraSecreta() {
+    private static String ObtenerPalabraSecreta() {
         System.out.println("Palabra de encriptacion:");
         String palabraSecreta = lector.nextLine();
         return palabraSecreta;

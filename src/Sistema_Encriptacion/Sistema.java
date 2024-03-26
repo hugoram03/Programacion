@@ -1,13 +1,11 @@
-package SIstema_Encriptacion;
+package Sistema_Encriptacion;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Sistema {
     private static int caracter;
     private static int indice = 0;
 
-    //TODO DESGLOSAR POR DIFERENTES METODOS
     public static void encriptar(File fichero, String palabraSecreta) throws IOException {
         FileInputStream input = new FileInputStream(fichero);
         File ficheroEncriptado = new File("src\\Sistema_Encriptacion\\" + fichero + ".crip");
