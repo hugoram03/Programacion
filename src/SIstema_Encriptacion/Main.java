@@ -3,14 +3,15 @@ package SIstema_Encriptacion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
-
+    static Scanner lector = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
-        Scanner lector = new Scanner(System.in);
+
         String opcion;
         try {
             do {
@@ -22,10 +23,10 @@ public class Main {
                 opcion = lector.nextLine();
                 switch (opcion) {
                     case "1":
-                        Sistema.encriptar(lector);
+                        Sistema.encriptar(preguntaFichero(), palabraSecreta());
                         break;
                     case "2":
-                        Sistema.desencriptar(lector);
+                        Sistema.desencriptar(preguntaFichero(), palabraSecreta());
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
@@ -35,5 +36,21 @@ public class Main {
             LOGGER.info("Error al encriptar/desencriptar un fichero");
             LOGGER.error(e.getStackTrace());
         }
+    }
+
+    private static File preguntaFichero() {
+        String fichero;
+        File ficheroAEncriptar;
+        do {
+            System.out.println("Introduce un fichero que se encuentre disponible en el sistema de encriptacion?");
+            fichero = lector.nextLine();
+            ficheroAEncriptar = new File("src\\Sistema_Encriptacion\\" + fichero + ".txt");
+        } while (!ficheroAEncriptar.canRead());
+        return ficheroAEncriptar;
+    }
+    private static String palabraSecreta() {
+        System.out.println("Palabra de encriptacion:");
+        String palabraSecreta = lector.nextLine();
+        return palabraSecreta;
     }
 }

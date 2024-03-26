@@ -125,7 +125,7 @@ public class Main {
         PrintWriter printWriter = new PrintWriter(ficheroPrint);
         printWriter.println("Hola");
         printWriter.print("mundo ");
-        printWriter.format("dia %d", caracter);
+        printWriter.format("dia %d de marzo", caracter);
         printWriter.println("\n" + 12);
         printWriter.println(11.5);
         printWriter.close();
@@ -138,9 +138,11 @@ public class Main {
         while (scanner.hasNext()) {
             if (scanner.hasNextInt()) {
                 cadena.append("\nEntero: " + scanner.nextInt());
-            } else if (scanner.hasNextDouble()) {
+            }
+            if (scanner.hasNextDouble()) {
                 cadena.append("\nDouble: " + scanner.nextDouble());
-            } else {
+            }
+            if (scanner.hasNext()){
                 cadena.append("\n" + scanner.nextLine());
             }
         }
