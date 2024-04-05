@@ -23,9 +23,11 @@ public class Main {
                 switch (opcion) {
                     case "1":
                         Sistema.encriptar(preguntaFichero(), ObtenerPalabraSecreta());
+                        Sistema.encriptarBase64(preguntaFichero());
                         break;
                     case "2":
                         Sistema.desencriptar(preguntaFichero(), ObtenerPalabraSecreta());
+                        Sistema.desencritarBase64(preguntaFichero());
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
@@ -36,15 +38,25 @@ public class Main {
             LOGGER.error(e.getStackTrace());
         }
     }
-
-    private static File preguntaFichero() {
+//TODO arreglar problema, no lee el fichero correctamente
+    private static File preguntaFichero() throws IOException {
         String fichero;
         File ficheroAEncriptar;
+        boolean existe = false;
         do {
             System.out.println("Introduce un fichero que se encuentre disponible en el sistema de encriptacion?");
             fichero = lector.nextLine();
             ficheroAEncriptar = new File("src\\Sistema_Encriptacion\\" + fichero + ".txt");
-        } while (!ficheroAEncriptar.canRead());
+            if (!ficheroAEncriptar.canRead()){
+                System.out.println("Fichero no encontrado quieres crearlo? (s/n)");
+                String opcion = lector.nextLine();
+                if (opcion.equalsIgnoreCase("s")){
+                    File ficheroNuevo = new File("src\\Sistema_Encriptacion\\" + fichero + ".txt");
+                    ficheroNuevo.createNewFile();
+                    existe = true;
+                }
+            }
+        } while (!existe);
         return ficheroAEncriptar;
     }
     private static String ObtenerPalabraSecreta() {
