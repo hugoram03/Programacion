@@ -3,8 +3,13 @@ package Sistema_Encriptacion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.File;
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class Main {
@@ -22,18 +27,21 @@ public class Main {
                 opcion = lector.nextLine();
                 switch (opcion) {
                     case "1":
-                        Sistema.encriptar(preguntaFichero(), ObtenerPalabraSecreta());
+                        Sistema.encriptar(preguntaFichero(), obtenerPalabraSecreta());
                         Sistema.encriptarBase64(preguntaFichero());
+                        Sistema.encriptarCipher(preguntaFichero(), obtenerPalabraSecreta());
                         break;
                     case "2":
-                        Sistema.desencriptar(preguntaFichero(), ObtenerPalabraSecreta());
+                        Sistema.desencriptar(preguntaFichero(), obtenerPalabraSecreta());
                         Sistema.desencritarBase64(preguntaFichero());
+                        Sistema.desencriptarCipher(preguntaFichero(), obtenerPalabraSecreta());
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
                 }
             } while (!opcion.equals("0"));
-        } catch (IOException e){
+        } catch (IOException | NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException |
+                 IllegalBlockSizeException | BadPaddingException e){
             LOGGER.info("Error al encriptar/desencriptar un fichero");
             LOGGER.error(e.getStackTrace());
         }
@@ -59,7 +67,7 @@ public class Main {
         } while (!existe);
         return ficheroAEncriptar;
     }
-    private static String ObtenerPalabraSecreta() {
+    private static String obtenerPalabraSecreta() {
         System.out.println("Palabra de encriptacion:");
         String palabraSecreta = lector.nextLine();
         return palabraSecreta;
