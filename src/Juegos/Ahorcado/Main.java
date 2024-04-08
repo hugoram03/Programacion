@@ -1,4 +1,4 @@
-package MultiplicationGameAhorcado.Ricardo;
+package Juegos.Ahorcado;
 
 import java.util.ArrayList;
 import java.util.Scanner;

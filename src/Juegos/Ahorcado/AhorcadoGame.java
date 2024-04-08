@@ -1,4 +1,4 @@
-package MultiplicationGameAhorcado.Ricardo;
+package Juegos.Ahorcado;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -105,5 +105,3 @@ public class AhorcadoGame {
         return "\nBienvenido al Ahorcado,  12 intentos en total | La palabra a adivinar es: " + ocultarPalabra();
     }
 }
-
-

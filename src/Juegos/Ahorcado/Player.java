@@ -1,4 +1,4 @@
-package MultiplicationGameAhorcado.Ricardo;
+package Juegos.Ahorcado;
 
 public class Player {
     private String nombre;
