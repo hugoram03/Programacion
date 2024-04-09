@@ -10,6 +10,18 @@ public class Sistema {
     private static int caracter;
     private static int indice = 0;
 
+    /*public static void encriptar(File fichero, String palabraSecreta) throws IOException {
+        FileInputStream input = new FileInputStream(fichero);
+        File ficheroEncriptado = new File("src\\Sistema_Encriptacion\\" + fichero + ".crip");
+        FileOutputStream output = new FileOutputStream(ficheroEncriptado);
+        while ((caracter = input.read()) != -1) {
+            int nuevoCaracter = caracter + palabraSecreta.charAt(indice);
+            output.write(nuevoCaracter);
+            indice = (indice + 1) % palabraSecreta.length();
+        }
+        output.close();
+    }
+     */
     public static void encriptar(File fichero, String palabraSecreta) throws IOException {
         FileInputStream input = new FileInputStream(fichero);
         File ficheroEncriptado = new File("src\\Sistema_Encriptacion\\" + fichero + ".crip");
@@ -47,7 +59,7 @@ public class Sistema {
         reader.close();
     }
 
-    public static void desencritarBase64(File fichero) throws IOException {
+    public static void desencriptarBase64(File fichero) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src\\Sistema_Encriptacion\\" + fichero + "2.crip"));
         BufferedWriter writer = new BufferedWriter(new FileWriter(fichero));
         String linea;
@@ -61,6 +73,7 @@ public class Sistema {
         writer.close();
     }
 
+    //TODO no se llegan a controlar todas las excepciones, se podrían añadir todas en el main o con un try catch en el método
     public static void encriptarCipher(File fichero, String palabraSecreta) throws NoSuchAlgorithmException, IOException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         SecretKey secretKey = obtenerPalabraSecreta(palabraSecreta);
         FileInputStream inputStream = new FileInputStream(fichero);

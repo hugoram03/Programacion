@@ -33,13 +33,17 @@ public class Main {
                         break;
                     case "2":
                         Sistema.desencriptar(preguntaFichero(), obtenerPalabraSecreta());
-                        Sistema.desencritarBase64(preguntaFichero());
+                        Sistema.desencriptarBase64(preguntaFichero());
                         Sistema.desencriptarCipher(preguntaFichero(), obtenerPalabraSecreta());
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
                 }
             } while (!opcion.equals("0"));
+            //Todo se podría añadir mensaje despedida si selecciona opción 0
+            if(opcion.equals("0")){
+                System.out.println("Hasta pronto ...");
+            }
         } catch (IOException | NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException |
                  IllegalBlockSizeException | BadPaddingException e){
             LOGGER.info("Error al encriptar/desencriptar un fichero");
@@ -67,6 +71,10 @@ public class Main {
         } while (!existe);
         return ficheroAEncriptar;
     }
+    //TODO se podría mejorar salida ocion n
+
+
+
     private static String obtenerPalabraSecreta() {
         System.out.println("Palabra de encriptacion:");
         String palabraSecreta = lector.nextLine();
