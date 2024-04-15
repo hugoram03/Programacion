@@ -90,19 +90,20 @@ public class Main {
                     System.out.println("La palabra oculta es de tipo: " + ahorcadoGame.mostrarTipo());
                 }
                 if (ahorcadoGame.ganador()) {
-                    System.out.println("Bien hecho, " + listaJugadores.get(i).getNombre() + "es el ganador del ahorcado");
+                    System.out.println("Enhorabuena, el " + listaJugadores.get(i).getNombre() + " es el ganador del ahorcado");
                     return;
                 }
             }
         }
+        System.out.println("La palabra a adivinar era: " + ahorcadoGame.mostrarIncognita());
     }
 
     public static boolean verificarCaracter(char letraCharacter, int fallos) {
         if (ahorcadoGame.verificarLetra(letraCharacter)) {
-            System.out.println("Bien hecho, se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.cambios());
+            System.out.println("Bien hecho, se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.PalabraOcultaTXT());
             return true;
         } else {
-            System.out.println("Te has equivocado, no se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.cambios() + "\nNúmero de intentos: " + (fallos - 1));
+            System.out.println("Te has equivocado, no se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.PalabraOcultaTXT() + "\nNúmero de intentos: " + (fallos - 1));
             return false;
         }
     }

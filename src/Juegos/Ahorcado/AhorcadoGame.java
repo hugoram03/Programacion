@@ -71,13 +71,13 @@ public class AhorcadoGame {
         return letraEncontrada;
     }
 
-    public String cambios() {
+    public String PalabraOcultaTXT() {
         return texto(palabraOculta);
     }
 
     public Boolean ganador() {
         Boolean ganador = false;
-        if (incognitaAAdivinar.equals(cambios())) {
+        if (mostrarIncognita().equalsIgnoreCase(PalabraOcultaTXT())){
             ganador = true;
             return ganador;
         }
