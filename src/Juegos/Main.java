@@ -1,4 +1,10 @@
-package Juegos.Ahorcado;
+package Juegos;
+
+import Juegos.Ahorcado.AhorcadoGame;
+import Juegos.Ahorcado.Jugador;
+import Juegos.MultiplicationGame.MultiplicationGame;
+import Juegos.MultiplicationGame.ThreePlayers;
+import Juegos.MultiplicationGame.TwoPlayers;
 
 import java.util.ArrayList;
 import java.util.Scanner;

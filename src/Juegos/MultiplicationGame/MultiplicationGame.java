@@ -1,4 +1,4 @@
-package Juegos.Ahorcado;
+package Juegos.MultiplicationGame;
 
 import java.util.Random;
 import  java.util.ArrayList;

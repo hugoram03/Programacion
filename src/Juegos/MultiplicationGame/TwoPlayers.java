@@ -1,4 +1,6 @@
-package Juegos.Ahorcado;
+package Juegos.MultiplicationGame;
+
+import Juegos.Ahorcado.Jugador;
 
 import java.util.ArrayList;
 
