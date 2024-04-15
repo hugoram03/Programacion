@@ -4,23 +4,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static final Scanner sc = new Scanner(System.in);
+    static final Scanner lector = new Scanner(System.in);
     static final MultiplicationGame multiplicationGame = new MultiplicationGame();
     static final AhorcadoGame ahorcadoGame = new AhorcadoGame();
 
     public static void main(String[] args) {
 
-        System.out.print("Juegos: \n(1) MultiplicationGame \n(2) Ahorcado \n\nA que videojuego desea jugar: ");
-        String opcionJuego = sc.nextLine();
+        System.out.print("Juegos: \n(1) MultiplicationGame \n(2) Ahorcado \nOpcion: ");
+        String opcionJuego = lector.nextLine();
 
         System.out.print("\nCuantos jugadores van a jugar (2 o 3): ");
-        int numJugadores = sc.nextInt();
+        int numJugadores = lector.nextInt();
 
         menu(numJugadores, opcionJuego);
 
     }
 
-    //menu para seleccionar el juego
     public static void menu(int numJugadores, String opcionJuego) {
         ArrayList<Jugador> listaJugadores = numJugadores(numJugadores);
 
@@ -53,9 +52,9 @@ public class Main {
         do {
             for (int i = 0; i < listaJugadores.size(); i++) {
                 System.out.print("Turno de " + listaJugadores.get(i).getNombre() + ": |" + multiplicationGame.toString() + ": ");
-                int respuesta = sc.nextInt();
+                int respuesta = lector.nextInt();
 
-                sc.nextLine();
+                lector.nextLine();
 
 
                 if (multiplicationGame.validarSolucion(respuesta)) {
@@ -82,7 +81,7 @@ public class Main {
 
             for (int i = 0; i < listaJugadores.size(); i++) {
                 System.out.print("\nTurno de " + listaJugadores.get(i).getNombre() + ", introduzca una letra: ");
-                char letraCharacter = sc.next().charAt(0);
+                char letraCharacter = lector.next().charAt(0);
 
                 if (verificarCaracter(letraCharacter, fallos) == Boolean.FALSE) {
                     fallos--;
@@ -91,7 +90,7 @@ public class Main {
                     System.out.println("La palabra oculta es de tipo: " + ahorcadoGame.mostrarTipo());
                 }
                 if (ahorcadoGame.ganador()) {
-                    System.out.println("Bien hecho, " + listaJugadores.get(i).getNombre() + "es el ganador del ahoorcado");
+                    System.out.println("Bien hecho, " + listaJugadores.get(i).getNombre() + "es el ganador del ahorcado");
                     return;
                 }
             }
