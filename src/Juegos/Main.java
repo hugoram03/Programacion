@@ -81,18 +81,18 @@ public class Main {
         System.out.println(ahorcadoGame.toString());
         ArrayList<Character> letrasIntroducidas = new ArrayList<>();
 
-        int fallos = 12;
+        int rondas = 12;
 
-        while (fallos > 0) {
+        while (rondas > 0) {
 
             for (int i = 0; i < listaJugadores.size(); i++) {
-                System.out.print("\nTurno de " + listaJugadores.get(i).getNombre() + ", introduzca una letra: ");
+                System.out.print("\nTurno de " + listaJugadores.get(i).getNombre() + ", introduce una letra: ");
                 char letraCharacter = lector.next().charAt(0);
 
-                if (verificarCaracter(letraCharacter, fallos) == Boolean.FALSE) {
-                    fallos--;
+                if (!verificarCaracter(letraCharacter, rondas)) {
+                    rondas--;
                 }
-                if (fallos == 6) {
+                if (rondas == 6) {
                     System.out.println("La palabra oculta es de tipo: " + ahorcadoGame.mostrarTipo());
                 }
                 if (ahorcadoGame.ganador()) {

@@ -1,6 +1,11 @@
 package Juegos.Ahorcado;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 
 public class AhorcadoGame {
@@ -30,6 +35,24 @@ public class AhorcadoGame {
         incognitaAAdivinar = guardarIncognitas[random.nextInt(5)];
         return guardarIncognitas;
     }
+
+    /*public Incognita[] cargarIncognita() throws IOException {
+        ArrayList<Incognita> incognitas = new ArrayList<>();
+        incognitas.addAll(cargarIncognitasFichero(incognitas,"\\src\\Juegos\\Ahorcado\\libros.txt", incognitaAAdivinar.setTipo("Libros")));
+        incognitas.addAll(cargarIncognitasFichero(incognitas,"\\src\\Juegos\\Ahorcado\\peliculas.txt", incognitaAAdivinar.setTipo("Peliculas")));
+        incognitas.addAll(cargarIncognitasFichero(incognitas,"\\src\\Juegos\\Ahorcado\\gruposMusicales.txt", incognitaAAdivinar.setTipo("GruposMusicales")));
+        return incognitas.toArray(new Incognita[0]);
+    }
+
+    public ArrayList<Incognita> cargarIncognitasFichero(ArrayList incognitas, String fichero, String tipo) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(fichero));
+        String linea;
+        while ((linea = bufferedReader.readLine()) != null) {
+            incognitas.add(new Incognita(tipo, linea.trim()));
+        }
+        bufferedReader.close();
+        return incognitas;
+    }*/
 
     public String mostrarIncognita() {
         return incognitaAAdivinar.getTexto();
