@@ -106,7 +106,7 @@ public class Main {
 
     public static boolean verificarCaracter(char letraCharacter, int fallos) {
         if (ahorcadoGame.verificarLetra(letraCharacter)) {
-            System.out.println("Bien hecho, se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.PalabraOcultaTXT());
+            System.out.println("Se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.PalabraOcultaTXT());
             return true;
         } else {
             System.out.println("Te has equivocado, no se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.PalabraOcultaTXT() + "\nNúmero de intentos: " + (fallos - 1));
