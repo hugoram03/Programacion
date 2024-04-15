@@ -27,7 +27,6 @@ public class MultiplicationGame {
         return random.nextInt(10)+1;
     }
 
-
     @Override
     public String toString() {
         reiniciarNumeros();
@@ -38,7 +37,3 @@ public class MultiplicationGame {
         return respuestaUsuario == correctAnswer;
     }
 }
-
-
-
-

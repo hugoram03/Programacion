@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AhorcadoGame {
-        private Incognita[] incognitas; //Array que contiene las 6 incognitas
-        private Incognita incognitaAAdivinar; // Contiene la palabra y el tipo a adivinar
+        private Incognita[] incognitas;
+        private Incognita incognitaAAdivinar;
         private ArrayList<Character> palabraOculta = new ArrayList<>();
         private ArrayList<Character> palabra = new ArrayList<>();
 
@@ -19,18 +19,14 @@ public class AhorcadoGame {
 
         public Incognita[] guardarPalabras() {
 
-            String[] peliculas = {"lalaland", "jurassicpark", "interstellar", "gladiator", "deadpool"};
-            String[] libros = {"onepiece", "fuenteovejuna", "frankenstein", "mobydick", "labiblia"};
-            String[] gruposMusicales = {"acdc", "queen", "rollingstones", "nirvana", "coldplay"};
-
             Random random = new Random();
 
             Incognita[] guardarIncognitas = new Incognita[6];
 
             for (int i = 0; i < 5; i++) {
-                guardarIncognitas[i] = new Incognita("peliculas", peliculas[random.nextInt(5)]);
-                guardarIncognitas[i+=1] = new Incognita("libros", libros[random.nextInt(5)]);
-                guardarIncognitas[i+=1] = new Incognita("Grupos Musicales", gruposMusicales[random.nextInt(5)]);
+                guardarIncognitas[i] = new Incognita("peliculas", Pelicula.peliculas[random.nextInt(5)]);
+                guardarIncognitas[i+=1] = new Incognita("libros", Libro.libros[random.nextInt(5)]);
+                guardarIncognitas[i+=1] = new Incognita("Grupos Musicales", GrupoMusical.gruposMusicales[random.nextInt(5)]);
             }
 
 
@@ -47,7 +43,6 @@ public class AhorcadoGame {
         }
 
 
-        //Transforma la incognita  a adivinar a guiones
         public String ocultarPalabra() {
             String texto = incognitaAAdivinar.getTexto();
 
@@ -60,7 +55,6 @@ public class AhorcadoGame {
             return texto(palabraOculta);
         }
 
-        //este metodo transforma los arrays de caracteres en cadena de texto
         public String texto(ArrayList<Character> arrayPalabras) {
             StringBuilder resultado = new StringBuilder(arrayPalabras.size());
             for (Character c : arrayPalabras) {
@@ -95,6 +89,7 @@ public class AhorcadoGame {
         public Boolean ganador() {
             Boolean opcion = false;
             if (incognitaAAdivinar.equals(cambios())) {
+                opcion = true;
                return opcion;
             }
             return opcion;

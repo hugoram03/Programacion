@@ -1,15 +1,15 @@
 package Juegos.Ahorcado;
 
-public class Player {
+public class Jugador {
     private String nombre;
     private Boolean haFallado;
 
     private int intentos = 12;
-    public Player(String nombre) {
+    public Jugador(String nombre) {
         this.nombre = nombre;
     }
 
-    public Player() {
+    public Jugador() {
 
     }
 

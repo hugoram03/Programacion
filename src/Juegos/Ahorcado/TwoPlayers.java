@@ -2,33 +2,33 @@ package Juegos.Ahorcado;
 
 import java.util.ArrayList;
 
-public class TwoPlayers extends Player {
+public class TwoPlayers extends Jugador {
 
-    private Player player1 = new Player("jugador 1");
-    private Player player2= new Player("jugador 2");
+    private Jugador jugador1 = new Jugador("jugador 1");
+    private Jugador jugador2 = new Jugador("jugador 2");
 
-    public TwoPlayers(String nombre, Player player1, Player player2) {
+    public TwoPlayers(String nombre, Jugador jugador1, Jugador jugador2) {
         super(nombre);
-        this.player1 = player1;
-        this.player2 = player2;
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
     public TwoPlayers() {
 
     }
 
-    public Player getPlayer1() {
-        return player1;
+    public Jugador getPlayer1() {
+        return jugador1;
     }
 
-    public Player getPlayer2() {
-        return player2;
+    public Jugador getPlayer2() {
+        return jugador2;
     }
 
-    public ArrayList<Player> getAllPlayers() {
-        ArrayList<Player> listaJugadores = new ArrayList<>();
-        listaJugadores.add(player1);
-        listaJugadores.add(player2);
+    public ArrayList<Jugador> getAllPlayers() {
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
+        listaJugadores.add(jugador1);
+        listaJugadores.add(jugador2);
         return listaJugadores;
     }
 }

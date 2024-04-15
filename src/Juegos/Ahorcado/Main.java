@@ -10,10 +10,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Juegos disponibles: \n(1) MultiplicationGame \n(2) Ahorcado \n\nA que videojuego desea jugar: ");
+        System.out.print("Juegos: \n(1) MultiplicationGame \n(2) Ahorcado \n\nA que videojuego desea jugar: ");
         String opcionJuego = sc.nextLine();
 
-        System.out.print("\nCuantos jugadores van a jugar (2) o (3): ");
+        System.out.print("\nCuantos jugadores van a jugar (2 o 3): ");
         int numJugadores = sc.nextInt();
 
         menu(numJugadores, opcionJuego);
@@ -22,7 +22,7 @@ public class Main {
 
     //menu para seleccionar el juego
     public static void menu(int numJugadores, String opcionJuego) {
-        ArrayList<Player> listaJugadores = numJugadores(numJugadores);
+        ArrayList<Jugador> listaJugadores = numJugadores(numJugadores);
 
         switch (opcionJuego) {
             case "1":
@@ -37,8 +37,7 @@ public class Main {
         }
     }
 
-    //Método que devuelve un arrayList con los jugadores elegidos
-    private static ArrayList<Player> numJugadores(int numJugadores) {
+    private static ArrayList<Jugador> numJugadores(int numJugadores) {
         if (numJugadores == 2) {
             TwoPlayers dosJugadores = new TwoPlayers();
             return dosJugadores.getAllPlayers();
@@ -50,7 +49,7 @@ public class Main {
         }
     }
 
-    public static void multiplicationGame(ArrayList<Player> listaJugadores) {
+    public static void multiplicationGame(ArrayList<Jugador> listaJugadores) {
         do {
             for (int i = 0; i < listaJugadores.size(); i++) {
                 System.out.print("Turno de " + listaJugadores.get(i).getNombre() + ": |" + multiplicationGame.toString() + ": ");
@@ -58,7 +57,7 @@ public class Main {
 
                 sc.nextLine();
 
-                //Validación de la respuesta
+
                 if (multiplicationGame.validarSolucion(respuesta)) {
                     System.out.println("Respuesta correcta, puedes seguir \n");
                 } else {
@@ -71,8 +70,7 @@ public class Main {
         System.out.println("\n El ganador es: " + listaJugadores.get(0).getNombre());
     }
 
-    //NOTA: Se que el metodo es bastante largo, he querido hacer un metodo por juego, intentare meter cosas en la clase AhorcadoGame;
-    public static void ahorcado(ArrayList<Player> listaJugadores) {
+    public static void ahorcado(ArrayList<Jugador> listaJugadores) {
 
         final String palabra = ahorcadoGame.mostrarIncognita();
         System.out.println(ahorcadoGame.toString());
@@ -86,27 +84,26 @@ public class Main {
                 System.out.print("\nTurno de " + listaJugadores.get(i).getNombre() + ", introduzca una letra: ");
                 char letraCharacter = sc.next().charAt(0);
 
-                if(verificarCosas(letraCharacter, fallos) == Boolean.FALSE) {
+                if (verificarCaracter(letraCharacter, fallos) == Boolean.FALSE) {
                     fallos--;
                 }
-
+                if (fallos == 6) {
+                    System.out.println("La palabra oculta es de tipo: " + ahorcadoGame.mostrarTipo());
+                }
                 if (ahorcadoGame.ganador()) {
                     System.out.println("Bien hecho, " + listaJugadores.get(i).getNombre() + "es el ganador del ahoorcado");
                     return;
                 }
             }
-            if (fallos == 6) {
-                System.out.println("La palabra oculta es de tipo: "+ ahorcadoGame.mostrarTipo());
-            }
         }
     }
 
-    public static boolean verificarCosas(char letraCharacter, int fallos) {
+    public static boolean verificarCaracter(char letraCharacter, int fallos) {
         if (ahorcadoGame.verificarLetra(letraCharacter)) {
             System.out.println("Bien hecho, se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.cambios());
             return true;
         } else {
-            System.out.println("Te has equivocado, no se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.cambios() + "\nNúmero de intentos: " + (fallos-1));
+            System.out.println("Te has equivocado, no se ha encontrado la letra (" + letraCharacter + "): " + ahorcadoGame.cambios() + "\nNúmero de intentos: " + (fallos - 1));
             return false;
         }
     }

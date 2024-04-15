@@ -41,8 +41,6 @@ public class Incognita {
         return "Tipo y texto de la incognita: " + getTipo() + getTexto();
     }
 
-    public Incognita() {
-        
-    }
+
 
 }
