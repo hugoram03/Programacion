@@ -1,4 +1,4 @@
-package PA;
+package ProgramaMe;
 
 public class Main {
 
@@ -14,7 +14,7 @@ public class Main {
             for (int i = 0; i < numerosSeparados.length - 1; i++) {
                 int numAnterior = Integer.parseInt(numerosSeparados[i]);
                 int numeroSiguiente = Integer.parseInt(numerosSeparados[i + 1]);
-                if (((numAnterior < 0 && numeroSiguiente > 0) || (numAnterior > 0 && numeroSiguiente < 0) || (numAnterior == numeroSiguiente)) &&
+                if (((Math.abs(numAnterior) < Math.abs(numeroSiguiente)) || (numAnterior == numeroSiguiente)) &&
                         !(Math.abs(numAnterior) >= Math.abs(numeroSiguiente) && (Math.signum(numAnterior) != Math.signum(numeroSiguiente)))) {
                     esCorrecto = true;
                 } else {
@@ -28,6 +28,7 @@ public class Main {
             System.out.println("INCORRECTA");
         }
     }
+
     public static void main(String[] args) {
         int numCasos;
         do {
