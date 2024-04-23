@@ -1,6 +1,6 @@
 package Extiende_Figura_Modificado;
 
-public class Cilindro  implements FiguraAbstracta {
+public class Cilindro implements FiguraAbstracta {
 
     private double radio;
     private double altura;

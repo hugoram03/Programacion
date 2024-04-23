@@ -6,9 +6,6 @@ public class Rectangulo extends Figura implements FiguraAbstracta, Printable {
     private final double altura;
     private static final String NOMBRE = "Circulo";
 
-    //TODO en todas las clases repetimos el nombre, para el super y para el toString:
-    // private static final String NOMBRE = "Rectángulo";
-
     public Rectangulo(double base, double altura) {
         super(NOMBRE);
         this.base = base;

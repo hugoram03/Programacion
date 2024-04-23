@@ -1,7 +1,7 @@
 package Extiende_Figura_Modificado;
 
 //TODO esto no lo entiendo
-public class Funcionalidades implements FiguraAbstracta{
+public class Funcionalidades implements FiguraAbstracta {
 
     @Override
     public double area() {
