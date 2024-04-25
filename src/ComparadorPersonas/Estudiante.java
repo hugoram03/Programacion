@@ -1,0 +1,78 @@
+package ComparadorPersonas;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Estudiante {
+    private String nombre;
+    private String apellidos;
+    private LocalDate fechaNacimiento;
+    private double notaMedia;
+    private String fechaTransformada;
+
+    public Estudiante(String nombre, String apellidos, LocalDate fechaNacimiento, double notaMedia) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.notaMedia = notaMedia;
+        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.fechaTransformada = fechaNacimiento.format(formatoFecha);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public double getNotaMedia() {
+        return notaMedia;
+    }
+
+    public void setNotaMedia(double notaMedia) {
+        this.notaMedia = notaMedia;
+    }
+
+    public String getFechaTransformada() {
+        return fechaTransformada;
+    }
+
+    public void setFechaTransformada(String fechaTransformada) {
+        this.fechaTransformada = fechaTransformada;
+    }
+
+    public String getEdad(){
+        LocalDate fechaActual = LocalDate.now();
+        int edad = fechaActual.getYear() - fechaNacimiento.getYear();
+        String edadTXT = edad + "";
+        return edadTXT;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fechaNacimiento=" + fechaTransformada +
+                ", notaMedia= " + notaMedia +
+                '}';
+    }
+}
