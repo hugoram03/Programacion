@@ -2,6 +2,7 @@ package ComparadorPersonas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Estudiante {
     private String nombre;
@@ -64,6 +65,19 @@ public class Estudiante {
         int edad = fechaActual.getYear() - fechaNacimiento.getYear();
         String edadTXT = edad + "";
         return edadTXT;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Estudiante that = (Estudiante) o;
+        return Double.compare(notaMedia, that.notaMedia) == 0 && Objects.equals(nombre, that.nombre) && Objects.equals(apellidos, that.apellidos) && Objects.equals(fechaNacimiento, that.fechaNacimiento) && Objects.equals(fechaTransformada, that.fechaTransformada);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, apellidos, fechaNacimiento, notaMedia, fechaTransformada);
     }
 
     @Override

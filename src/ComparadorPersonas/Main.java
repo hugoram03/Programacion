@@ -15,9 +15,9 @@ import java.util.Collections;
 public class Main {
     static final String RUTAFICHERO = "src/ComparadorPersonas/baseDatos";
     static ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
+    //TODO LO VEO DE PUTA MADRE
     public static void main(String[] args) {
-        anadeUsuarios();
+        cargarUsuarios();
         System.out.println("--Mostrando lista de usuarios sin ordenar--");
         for (int i = 0; i < estudiantes.size(); i++) {
             System.out.println(estudiantes.get(i));
@@ -27,16 +27,16 @@ public class Main {
         mostrarListaOrdenacionNotaMedia();
     }
 
-    public static void anadeUsuarios() {
+    public static void cargarUsuarios() {
         try (BufferedReader br = new BufferedReader(new FileReader(RUTAFICHERO))) {
             br.readLine();
             String linea;
-            while ((linea = br.readLine()) != null && estudiantes.size() < 10) {
+            while ((linea = br.readLine()) != null) {
                 String[] informacion = linea.split(";");
                 String nombre = informacion[0];
                 String apellidos = informacion[1];
                 LocalDate fechaNaciemiento = LocalDate.parse(informacion[2], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                Double notaMedia = Double.parseDouble(informacion[3]);
+                double notaMedia = Double.parseDouble(informacion[3]);
                 Estudiante estudiante = new Estudiante(nombre, apellidos, fechaNaciemiento, notaMedia);
                 estudiantes.add(estudiante);
             }
