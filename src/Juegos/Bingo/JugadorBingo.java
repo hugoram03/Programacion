@@ -6,9 +6,9 @@ public class JugadorBingo {
     private String nombre;
     private int edad;
     private String ciudad;
-    private Carton cartonJugador;
+    private String[][] cartonJugador;
 
-    public JugadorBingo(String nombre, int edad, String ciudad, Carton cartonJugador) {
+    public JugadorBingo(String nombre, int edad, String ciudad, String[][] cartonJugador) {
         this.nombre = nombre;
         this.edad = edad;
         this.ciudad = ciudad;
@@ -37,14 +37,6 @@ public class JugadorBingo {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
-    }
-
-    public Carton getCartonJugador() {
-        return cartonJugador;
-    }
-
-    public void setCartonJugador(Carton cartonJugador) {
-        this.cartonJugador = cartonJugador;
     }
 
     @Override
