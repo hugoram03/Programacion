@@ -2,6 +2,9 @@ package Juegos;
 
 import Juegos.Ahorcado.AhorcadoGame;
 import Juegos.Ahorcado.Jugador;
+import Juegos.Bingo.BingoGame;
+import Juegos.Bingo.Carton;
+import Juegos.Bingo.JugadorBingo;
 import Juegos.MultiplicationGame.MultiplicationGame;
 import Juegos.MultiplicationGame.ThreePlayers;
 import Juegos.MultiplicationGame.TwoPlayers;
@@ -10,13 +13,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static final Scanner lector = new Scanner(System.in);
-    static final MultiplicationGame multiplicationGame = new MultiplicationGame();
-    static final AhorcadoGame ahorcadoGame = new AhorcadoGame();
+    static Scanner lector = new Scanner(System.in);
+    static MultiplicationGame multiplicationGame = new MultiplicationGame();
+    static AhorcadoGame ahorcadoGame = new AhorcadoGame();
+    static BingoGame bingoGame = new BingoGame();
+    static Carton carton = new Carton();
 
     public static void main(String[] args) {
 
-        System.out.print("Juegos: \n(1) MultiplicationGame \n(2) Ahorcado \nOpcion: ");
+        System.out.print("Juegos: \n1- MultiplicationGame \n2- Ahorcado \n3- Bingo \nOpcion: ");
         String opcionJuego = lector.nextLine();
 
         System.out.print("\nCuantos jugadores van a jugar (2 o 3): ");
@@ -36,13 +41,36 @@ public class Main {
             case "2":
                 ahorcado(listaJugadores);
                 break;
+            case "3":
+                bingo(numJugadores);
+                break;
             default:
                 System.out.println("Juego incorrecto o no disponible");
                 break;
         }
     }
 
-    private static ArrayList<Jugador> numJugadores(int numJugadores) {
+    public static void bingo(int numJugadores) {
+        for (int i = 1; i <= numJugadores; i++) {
+            System.out.println("Añade tu informacion jugador " + i);
+            lector.nextLine();
+            System.out.print("Nombre: ");
+            String nombre = lector.nextLine();
+            System.out.print("Edad: ");
+            int edad = lector.nextInt();
+            System.out.print("Ciudad: ");
+            lector.nextLine();
+            String ciudad = lector.nextLine();
+            if (edad < 18) {
+                System.out.println("Lo siento " + nombre + " no puedes jugar al bingo por que eres menor de edad");
+            } else {
+                JugadorBingo jugador = new JugadorBingo(nombre, edad, ciudad, carton.getCarton());
+                bingoGame.anadirjugador(jugador);
+            }
+        }
+    }
+
+    public static ArrayList<Jugador> numJugadores(int numJugadores) {
         if (numJugadores == 2) {
             TwoPlayers dosJugadores = new TwoPlayers();
             return dosJugadores.getAllPlayers();
@@ -113,10 +141,4 @@ public class Main {
             return false;
         }
     }
-
 }
-
-
-
-
-
