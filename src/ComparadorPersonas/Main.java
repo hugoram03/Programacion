@@ -7,21 +7,16 @@ import ComparadorPersonas.Comparadores.NotaMediaComparator;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.Collator;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Locale;
 
 public class Main {
     static final String RUTAFICHERO = "src/ComparadorPersonas/baseDatos";
     static ArrayList<Estudiante> estudiantes = new ArrayList<>();
-    static Collator miCollator = Collator.getInstance(new Locale("es", "ES"));
 
     public static void main(String[] args) {
-
-        miCollator.setStrength(Collator.TERTIARY);
         anadeUsuarios();
         System.out.println("--Mostrando lista de usuarios sin ordenar--");
         for (int i = 0; i < estudiantes.size(); i++) {
@@ -52,7 +47,7 @@ public class Main {
 
     public static void mostrarListaOrdenacionNombre() {
         System.out.println("\n--Mostrando lista de usuarios con ordenacion por defecto--");
-        Collections.sort(estudiantes, miCollator);
+        Collections.sort(estudiantes, new NombreComparator());
         for (int i = 0; i < estudiantes.size(); i++) {
             System.out.println(estudiantes.get(i));
         }
@@ -60,14 +55,14 @@ public class Main {
 
     public static void mostrarListaOrdenacionEdad() {
         System.out.println("\n--Mostrando lista de usuarios con ordenacion por edad--");
-        Collections.sort(estudiantes, miCollator);
+        Collections.sort(estudiantes, new EdadComparator());
         for (int i = 0; i < estudiantes.size(); i++) {
             System.out.println(estudiantes.get(i));
         }
     }
     public static void mostrarListaOrdenacionNotaMedia(){
         System.out.println("\n--Mostrando lista de usuarios con ordenacion por nota media--");
-        Collections.sort(estudiantes, miCollator);
+        Collections.sort(estudiantes, new NotaMediaComparator());
         for (int i = 0; i < estudiantes.size(); i++) {
             System.out.println(estudiantes.get(i));
         }
