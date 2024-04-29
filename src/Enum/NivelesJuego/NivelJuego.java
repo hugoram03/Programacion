@@ -7,9 +7,10 @@ public enum NivelJuego {
 
 
     public boolean esAvanzado(){
-        if (this.equals(NivelJuego.AVANZADO)){
+        return this.equals(NivelJuego.AVANZADO);
+        /*if (this.equals(NivelJuego.AVANZADO)){
             return true;
         }
-        return false;
+        return false;*/
     }
 }

@@ -1,51 +1,30 @@
 package Enum.ValorCartas;
 
 public enum ValorCarta {
-    A,
-    UNO,
-    DOS,
-    TRES,
-    CUATRO,
-    CINCO,
-    SEIS,
-    SIETE,
-    OCHO,
-    NUEVE,
-    DIEZ,
-    J,
-    Q,
-    K;
+    A(1),
+    DOS(2),
+    TRES(3),
+    CUATRO(4),
+    CINCO(5),
+    SEIS(6),
+    SIETE(7),
+    OCHO(8),
+    NUEVE(9),
+    DIEZ(10),
+    J(10),
+    Q(11),
+    K(12);
+    private final int PUNTOS;
 
-    public int obtenerPuntos(){
-        int puntos = 0;
-        if (this.equals(ValorCarta.UNO)){
-            puntos = 1;
-        } else if (this.equals(ValorCarta.DOS)){
-            puntos = 2;
-        } else if (this.equals(ValorCarta.TRES)){
-            puntos = 3;
-        } else if (this.equals(ValorCarta.CUATRO)) {
-            puntos = 4;
-        } else if (this.equals(ValorCarta.CINCO)){
-            puntos = 5;
-        } else if (this.equals(ValorCarta.SEIS)){
-            puntos = 6;
-        } else if (this.equals(ValorCarta.SIETE)){
-            puntos = 7;
-        } else if (this.equals(ValorCarta.OCHO)){
-            puntos = 8;
-        } else if (this.equals(ValorCarta.NUEVE)){
-            puntos = 9;
-        } else if (this.equals(ValorCarta.DIEZ)){
-            puntos = 10;
-        } else if (this.equals(ValorCarta.J)){
-            puntos = 10;
-        } else if (this.equals(ValorCarta.Q)){
-            puntos = 10;
-        } else if (this.equals(ValorCarta.K)){
-            puntos = 10;
-        }
-        return puntos;
+    ValorCarta(int PUNTOS) {
+        this.PUNTOS = PUNTOS;
     }
 
+    public int getPUNTOS() {
+        return PUNTOS;
+    }
+
+    public int obtenerPuntos() {
+        return this.getPUNTOS();
+    }
 }
