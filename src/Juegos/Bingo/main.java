@@ -63,10 +63,10 @@ public class main {
         Random random = new Random();
         String[][] carton = new String[3][9];
         for (int fila = 0; fila < carton.length; fila++) {
+            int cont = 0;
             for (int col = 0; col < carton[fila].length; col++) {
                 int min = col * 10 + 1;
                 int max = (col + 1) * 10 - 1;
-                int cont = 0;
                 if (cont < 5) {
                     int numero = random.nextInt(1 - 0 + 1);
                     if (numero == 0) {
@@ -74,7 +74,7 @@ public class main {
                         carton[fila][col] = " " + num + " ";
                         cont++;
                     } else {
-                        carton[fila][col] = "   ";
+                        carton[fila][col] = " -1 ";
                     }
                 } else {
                     carton[fila][col] = "   ";
@@ -87,5 +87,4 @@ public class main {
 
         return carton;
     }
-    }
-
+}

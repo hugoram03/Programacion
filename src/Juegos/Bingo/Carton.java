@@ -18,7 +18,7 @@ public class Carton {
                         carton[fila][col] = num + "";
                         cont++;
                     } else {
-                        carton[fila][col] = "  ";
+                        carton[fila][col] = "-1";
                     }
                 } else {
                     carton[fila][col] = "  ";

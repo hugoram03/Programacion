@@ -2,15 +2,17 @@ package ComparadorPersonas.Comparadores;
 
 import ComparadorPersonas.Estudiante;
 
+import java.text.Collator;
 import java.util.Comparator;
 
 public class NombreComparator implements Comparator<Estudiante> {
-
+    Collator miCollator = Collator.getInstance();
     @Override
     public int compare(Estudiante e1, Estudiante e2) {
-        int resultado = e1.getNombre().compareTo(e2.getNombre());
+        miCollator.setStrength(Collator.TERTIARY);
+        int resultado = miCollator.compare(e1.getNombre(), e2.getNombre());
         if (resultado == 0){
-            resultado = e1.getApellidos().compareTo(e2.getApellidos());
+            resultado = miCollator.compare(e1.getApellidos(), e2.getApellidos());
         }
         return resultado;
     }

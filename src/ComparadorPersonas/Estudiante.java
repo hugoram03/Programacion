@@ -1,15 +1,17 @@
 package ComparadorPersonas;
 
+import java.text.Collator;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Estudiante {
+public class Estudiante implements Comparable<Estudiante> {
     private String nombre;
     private String apellidos;
     private LocalDate fechaNacimiento;
     private double notaMedia;
     private String fechaTransformada;
+    private Collator miCollator = Collator.getInstance();
 
     public Estudiante(String nombre, String apellidos, LocalDate fechaNacimiento, double notaMedia) {
         this.nombre = nombre;
@@ -60,7 +62,7 @@ public class Estudiante {
         this.fechaTransformada = fechaTransformada;
     }
 
-    public String getEdad(){
+    public String getEdad() {
         LocalDate fechaActual = LocalDate.now();
         int edad = fechaActual.getYear() - fechaNacimiento.getYear();
         String edadTXT = edad + "";
@@ -88,5 +90,14 @@ public class Estudiante {
                 ", fechaNacimiento=" + fechaTransformada +
                 ", notaMedia= " + notaMedia +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Estudiante other) {
+        int resultado = miCollator.compare(this.getNombre(), other.getNombre());
+        if (resultado == 0) {
+            resultado = miCollator.compare(this.getApellidos(), other.getApellidos());
+        }
+        return resultado;
     }
 }
