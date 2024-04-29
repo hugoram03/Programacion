@@ -3,6 +3,10 @@ package Juegos.Bingo;
 import java.util.Random;
 
 public class Carton {
+
+    public Carton() {
+    }
+
     public String[][] getCarton() {
         Random random = new Random();
         String[][] carton = new String[3][9];
@@ -27,8 +31,6 @@ public class Carton {
             }
             System.out.println();
         }
-
-
         return carton;
     }
 }
