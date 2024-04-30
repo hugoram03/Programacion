@@ -18,6 +18,7 @@ public class Main {
     static AhorcadoGame ahorcadoGame = new AhorcadoGame();
     static BingoGame bingoGame = new BingoGame();
     static Carton carton = new Carton();
+    static boolean ganador = false;
 
     public static void main(String[] args) {
 
@@ -33,6 +34,7 @@ public class Main {
 
     public static void menu(int numJugadores, String opcionJuego) {
         ArrayList<Jugador> listaJugadores = numJugadores(numJugadores);
+        ArrayList<JugadorBingo> listaJugadoresBingo = new ArrayList<>();
 
         switch (opcionJuego) {
             case "1":
@@ -42,7 +44,7 @@ public class Main {
                 ahorcado(listaJugadores);
                 break;
             case "3":
-                bingo(numJugadores);
+                bingo(numJugadores, listaJugadoresBingo);
                 break;
             default:
                 System.out.println("Juego incorrecto o no disponible");
@@ -50,7 +52,8 @@ public class Main {
         }
     }
 
-    public static void bingo(int numJugadores) {
+    public static void bingo(int numJugadores, ArrayList<JugadorBingo> listaJugadoresBingo) {
+
         for (int i = 1; i <= numJugadores; i++) {
             System.out.println("Añade tu informacion jugador " + i);
             lector.nextLine();
@@ -65,9 +68,43 @@ public class Main {
                 System.out.println("Lo siento " + nombre + " no puedes jugar al bingo por que eres menor de edad");
             } else {
                 JugadorBingo jugador = new JugadorBingo(nombre, edad, ciudad, carton.getCarton());
-                bingoGame.anadirjugador(jugador);
+                listaJugadoresBingo.add(jugador);
             }
         }
+        mostrarInfo(listaJugadoresBingo);
+        bingoGame.llenarBombo();
+        do {
+            jugar(listaJugadoresBingo);
+            lector.nextLine();
+        } while(!ganador);
+
+    }
+
+    private static void jugar(ArrayList<JugadorBingo> listaJugadoresBingo) {
+        int bola = bingoGame.sacarBola();
+        System.out.println("Numero extraido: " + bola);
+        for (int i = 0; i < listaJugadoresBingo.size(); i++) {
+           if(listaJugadoresBingo.get(i).compararNumero(bola)){
+               listaJugadoresBingo.get(i).setContadorNums();
+               bingoGame.borrarBola(bola);
+           } else {
+               bingoGame.borrarBola(bola);
+           }
+           if (listaJugadoresBingo.get(i).getContadorNums() == 15){
+               System.out.println("BINGO GANADOR: " + listaJugadoresBingo.get(i).getNombre());
+               ganador = true;
+           }
+        }
+    }
+
+    public static void mostrarInfo(ArrayList<JugadorBingo> listaJugadoresBingo) {
+        for (int i = 0; i < listaJugadoresBingo.size(); i++) {
+            System.out.print(listaJugadoresBingo.get(i).getNombre() + ":\n");
+            carton.mostrarCarton(listaJugadoresBingo.get(i).getCartonJugador());
+            System.out.print("\n--------------------------\n");
+        }
+        System.out.println("Preprados para jugar al bingo? ('Enter para empezar la partida')");
+        lector.nextLine();
     }
 
     public static ArrayList<Jugador> numJugadores(int numJugadores) {

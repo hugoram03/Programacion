@@ -6,9 +6,10 @@ public class JugadorBingo {
     private String nombre;
     private int edad;
     private String ciudad;
-    private String[][] cartonJugador;
+    private int[][] cartonJugador;
+    private int contadorNums;
 
-    public JugadorBingo(String nombre, int edad, String ciudad, String[][] cartonJugador) {
+    public JugadorBingo(String nombre, int edad, String ciudad, int[][] cartonJugador) {
         this.nombre = nombre;
         this.edad = edad;
         this.ciudad = ciudad;
@@ -37,6 +38,35 @@ public class JugadorBingo {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public int[][] getCartonJugador() {
+        return cartonJugador;
+    }
+
+    public int getContadorNums() {
+        return contadorNums;
+    }
+
+    public void setContadorNums() {
+        this.contadorNums += contadorNums;
+    }
+
+    //TODO PONE -1 EN TODOS LOS ESPACIOS EN BLANCO
+    public Boolean compararNumero(int numero) {
+        boolean encuentraNumero = false;
+        for (int i = 0; i < cartonJugador.length; i++) {
+            for (int j = 0; j < cartonJugador[i].length; j++) {
+                if (cartonJugador[i][j] == numero) {
+                    System.out.print("(" + numero + ") ");
+                    encuentraNumero = true;
+                } else {
+                    System.out.print(cartonJugador[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+        return encuentraNumero;
     }
 
     @Override
