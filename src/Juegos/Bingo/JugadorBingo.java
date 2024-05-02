@@ -1,13 +1,16 @@
 package Juegos.Bingo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class JugadorBingo {
+    private BingoGame bingoGame = new BingoGame();
     private String nombre;
     private int edad;
     private String ciudad;
     private int[][] cartonJugador;
     private int contadorNums;
+
 
     public JugadorBingo(String nombre, int edad, String ciudad, int[][] cartonJugador) {
         this.nombre = nombre;
@@ -49,17 +52,26 @@ public class JugadorBingo {
     }
 
     public void setContadorNums() {
-        this.contadorNums += contadorNums;
+        this.contadorNums++;
     }
 
     //TODO PONE -1 EN TODOS LOS ESPACIOS EN BLANCO
     public Boolean compararNumero(int numero) {
+        if (!bingoGame.numerosExtraidos.contains(numero)) {
+            bingoGame.numerosExtraidos.add(numero);
+        }
         boolean encuentraNumero = false;
         for (int i = 0; i < cartonJugador.length; i++) {
             for (int j = 0; j < cartonJugador[i].length; j++) {
                 if (cartonJugador[i][j] == numero) {
-                    System.out.print("(" + numero + ") ");
+                    if (bingoGame.numerosExtraidos.contains(numero)) {
+                        System.out.print("(" + numero + ") ");
+                    } else {
+                        System.out.print(numero + " ");
+                    }
                     encuentraNumero = true;
+                } else if (cartonJugador[i][j] == -1) {
+                    System.out.print("  ");
                 } else {
                     System.out.print(cartonJugador[i][j] + " ");
                 }

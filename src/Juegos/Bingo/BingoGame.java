@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class BingoGame {
     private ArrayList<Integer> bombo = new ArrayList<>();
+    public ArrayList<Integer> numerosExtraidos = new ArrayList<>();
 
     public BingoGame() {
 
@@ -21,11 +22,15 @@ public class BingoGame {
         bola = generarNumeroAleatorio(bombo.get(0), bombo.get(bombo.size() -1));
         return bola;
     }
-    public void borrarBola(int indice){
-        bombo.remove(indice);
+    public void borrarBola(int numero){
+        int indice = bombo.indexOf(numero);
+        if(indice != -1){
+            bombo.remove(indice);
+        }
     }
 
     public int generarNumeroAleatorio(int minimo, int maximo) {
         return (int) (Math.random() * (maximo - minimo + 1) + (minimo));
     }
+
 }

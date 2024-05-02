@@ -84,12 +84,11 @@ public class Main {
         int bola = bingoGame.sacarBola();
         System.out.println("Numero extraido: " + bola);
         for (int i = 0; i < listaJugadoresBingo.size(); i++) {
+
            if(listaJugadoresBingo.get(i).compararNumero(bola)){
                listaJugadoresBingo.get(i).setContadorNums();
-               bingoGame.borrarBola(bola);
-           } else {
-               bingoGame.borrarBola(bola);
            }
+               bingoGame.borrarBola(bola);
            if (listaJugadoresBingo.get(i).getContadorNums() == 15){
                System.out.println("BINGO GANADOR: " + listaJugadoresBingo.get(i).getNombre());
                ganador = true;
@@ -103,7 +102,7 @@ public class Main {
             carton.mostrarCarton(listaJugadoresBingo.get(i).getCartonJugador());
             System.out.print("\n--------------------------\n");
         }
-        System.out.println("Preprados para jugar al bingo? ('Enter para empezar la partida')");
+        System.out.println("Preparados para jugar al bingo? ('Enter para empezar la partida')");
         lector.nextLine();
     }
 
