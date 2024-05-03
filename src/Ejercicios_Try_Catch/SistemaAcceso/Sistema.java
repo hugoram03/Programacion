@@ -29,20 +29,12 @@ public class Sistema {
             }
         }
     }
-    public static void añadirUsuarioFichero(Usuario usuario) throws IOException {
-        File nuevosUsuarios = new File("src\\Ejercicios_Try_Catch\\SistemaAcceso\\nuevosUsuarios.txt");
-        FileWriter fileWriter = new FileWriter(nuevosUsuarios, true);
-        for (Usuario usuario1 : usuarios) {
-            if (usuario1.getUsuario().equals(usuario.getUsuario())){
-                fileWriter.write(usuario1.getUsuario() + "," + usuario1.getContrasena());
-                fileWriter.close();
-            }
-        }
-    }
+
     public static void cargarUsuarios(File archivo) {
-        try (Scanner scanner = new Scanner(archivo)) {
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
+        try (Scanner lector = new Scanner(archivo)) {
+            lector.nextLine();
+            while (lector.hasNextLine()) {
+                String linea = lector.nextLine();
                 String[] partes = linea.split(";");
                 if (partes.length == 7) {
                     String nombre = partes[0];
@@ -53,7 +45,6 @@ public class Sistema {
                     String nick = partes[5];
                     String contraseña = partes[6];
 
-                    // Crear usuario y agregarlo al ArrayList
                     Usuario usuario = new Usuario(nombre, apellidos, correoElectronico, direccionIP, telefono, nick, contraseña);
                     usuarios.add(usuario);
                 }

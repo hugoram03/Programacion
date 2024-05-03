@@ -26,7 +26,9 @@ public class Main {
                 String contraseña = lector.next();
                 try {
                     if (Sistema.verificarAcceso(usuario, contraseña)) {
-                        menu(lector, usuario, contraseña);
+                        menu(usuario, contraseña);
+                    } else {
+                        System.out.println("Credenciales incorrectas vuelva a iniciar sesion");
                     }
                 } catch (MaEx e) {
                     System.out.println(e.getMessage());
@@ -37,7 +39,7 @@ public class Main {
         } while (!opcion.equalsIgnoreCase("fin"));
     }
 
-    private static void menu(Scanner lector, String usuario, String contrasena) throws MaEx {
+    private static void menu(String usuario, String contrasena) throws MaEx {
         int opcion = 0;
         do {
             System.out.println("Que desea hacer? (0 - salir | 1 - cambiar contraseña)");
@@ -77,10 +79,10 @@ public class Main {
         System.out.println("Usuario: ");
         String usuario = validarUsuario();
         System.out.println("Contraseña: ");
-        String contraseña = validarContraseña();
+        String contrasena = validarContrasena();
         System.out.println("Confirmar contraseña: ");
         String confirmacionContraseña = lector.next();
-        while (!contraseña.equals(confirmacionContraseña)) {
+        while (!contrasena.equals(confirmacionContraseña)) {
             System.out.println("Las contraseñas no coinciden. Inténtalo de nuevo.");
             System.out.println("Confirmar contraseña: ");
             confirmacionContraseña = lector.next();
@@ -88,7 +90,7 @@ public class Main {
         System.out.println("Quiere ser registrado en nuestro sistema?: (si/no)");
         String opcion = lector.next();
         if (opcion.equalsIgnoreCase("si")){
-            Usuario nuevoUsuario = new Usuario(nombre,apellido,correoElectronico, direccionIP,telefono,usuario,contraseña);
+            Usuario nuevoUsuario = new Usuario(nombre,apellido,correoElectronico, direccionIP,telefono,usuario,contrasena);
             Sistema.usuarios.add(nuevoUsuario);
             guardarUsuario(nuevoUsuario);
         } else {
@@ -97,46 +99,42 @@ public class Main {
     }
 
     public static String validarCorreoElectronico() {
-        Scanner sc = new Scanner(System.in);
-        String correoElectronico = sc.next();
+        String correoElectronico = lector.next();
         while (!Pattern.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}", correoElectronico)) {
             System.out.println("El correo electrónico no es válido. Inténtalo de nuevo.");
             System.out.print("Correo electrónico: ");
-            correoElectronico = sc.next();
+            correoElectronico = lector.next();
         }
         return correoElectronico;
     }
 
     public static String validarDireccionIP() {
-        Scanner sc = new Scanner(System.in);
-        String direccionIP = sc.next();
+        String direccionIP = lector.next();
         while (!Pattern.matches("\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b", direccionIP)) {
             System.out.println("La dirección IP no es válida. Inténtalo de nuevo.");
             System.out.print("Dirección IP: ");
-            direccionIP = sc.next();
+            direccionIP = lector.next();
         }
         return direccionIP;
     }
 
 
     public static String validarUsuario() {
-        Scanner sc = new Scanner(System.in);
-        String nick = sc.next();
+        String nick = lector.next();
         while (!Pattern.matches("[a-z_]+", nick)) {
             System.out.println("El nick solo puede contener letras minúsculas y el guion bajo (_). Inténtalo de nuevo.");
             System.out.print("Nick: ");
-            nick = sc.next();
+            nick = lector.next();
         }
         return nick;
     }
 
-    public static String validarContraseña() {
-        Scanner sc = new Scanner(System.in);
-        String contraseña = sc.next();
+    public static String validarContrasena() {
+        String contraseña = lector.next();
         while (!Pattern.matches("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})", contraseña)) {
             System.out.println("La contraseña no cumple con los requisitos. Debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y símbolos.");
             System.out.print("Contraseña: ");
-            contraseña = sc.next();
+            contraseña = lector.next();
         }
         return contraseña;
     }

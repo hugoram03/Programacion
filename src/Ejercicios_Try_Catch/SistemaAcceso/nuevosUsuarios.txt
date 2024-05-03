@@ -1,1 +1,2 @@
+nombre;apellidos,email,IPv4,telefono,usuario,contraseña
 hugo;ramirez;hugo@gmail.com;123.123.123.123;619857053;hugoram;Hugo321@
