@@ -18,13 +18,17 @@ public class BingoGame {
     }
 
     public int sacarBola() {
-        int bola;
-        bola = generarNumeroAleatorio(bombo.get(0), bombo.get(bombo.size() -1));
-        return bola;
+        if (bombo.size() > 0) {
+            int numeroAleatorio = generarNumeroAleatorio(0, bombo.size() - 1);
+            return bombo.remove(numeroAleatorio);
+        } else {
+            return -1;
+        }
     }
-    public void borrarBola(int numero){
+
+    public void borrarBola(int numero) {
         int indice = bombo.indexOf(numero);
-        if(indice != -1){
+        if (indice != -1) {
             bombo.remove(indice);
         }
     }

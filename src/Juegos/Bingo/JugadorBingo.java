@@ -55,7 +55,6 @@ public class JugadorBingo {
         this.contadorNums++;
     }
 
-    //TODO PONE -1 EN TODOS LOS ESPACIOS EN BLANCO
     public Boolean compararNumero(int numero) {
         if (!bingoGame.numerosExtraidos.contains(numero)) {
             bingoGame.numerosExtraidos.add(numero);
@@ -63,23 +62,23 @@ public class JugadorBingo {
         boolean encuentraNumero = false;
         for (int i = 0; i < cartonJugador.length; i++) {
             for (int j = 0; j < cartonJugador[i].length; j++) {
-                if (cartonJugador[i][j] == numero) {
-                    if (bingoGame.numerosExtraidos.contains(numero)) {
-                        System.out.print("(" + numero + ") ");
-                    } else {
-                        System.out.print(numero + " ");
-                    }
-                    encuentraNumero = true;
+                if (bingoGame.numerosExtraidos.contains(cartonJugador[i][j])) {
+                    System.out.print("(" + cartonJugador[i][j] + ")");
                 } else if (cartonJugador[i][j] == -1) {
                     System.out.print("  ");
                 } else {
                     System.out.print(cartonJugador[i][j] + " ");
+                }
+                if (cartonJugador[i][j] == numero){
+                    encuentraNumero = true;
                 }
             }
             System.out.println();
         }
         return encuentraNumero;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

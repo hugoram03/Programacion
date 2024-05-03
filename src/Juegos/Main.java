@@ -70,13 +70,16 @@ public class Main {
                 JugadorBingo jugador = new JugadorBingo(nombre, edad, ciudad, carton.getCarton());
                 listaJugadoresBingo.add(jugador);
             }
+            if (listaJugadoresBingo.isEmpty()){
+                System.exit(0);
+            }
         }
         mostrarInfo(listaJugadoresBingo);
         bingoGame.llenarBombo();
         do {
             jugar(listaJugadoresBingo);
             lector.nextLine();
-        } while(!ganador);
+        } while (!ganador);
 
     }
 
@@ -84,15 +87,18 @@ public class Main {
         int bola = bingoGame.sacarBola();
         System.out.println("Numero extraido: " + bola);
         for (int i = 0; i < listaJugadoresBingo.size(); i++) {
-
-           if(listaJugadoresBingo.get(i).compararNumero(bola)){
-               listaJugadoresBingo.get(i).setContadorNums();
-           }
-               bingoGame.borrarBola(bola);
-           if (listaJugadoresBingo.get(i).getContadorNums() == 15){
-               System.out.println("BINGO GANADOR: " + listaJugadoresBingo.get(i).getNombre());
-               ganador = true;
-           }
+            System.out.println(listaJugadoresBingo.get(i).getNombre() + ":");
+            if (listaJugadoresBingo.get(i).compararNumero(bola)) {
+                listaJugadoresBingo.get(i).setContadorNums();
+            }
+            bingoGame.borrarBola(bola);
+            if (listaJugadoresBingo.get(i).getContadorNums() == 15) {
+                System.out.println("BINGO GANADOR: " + listaJugadoresBingo.get(i).getNombre() + " Edad: " + listaJugadoresBingo.get(i).getEdad() + " De " + listaJugadoresBingo.get(i).getCiudad());
+                ganador = true;
+            }
+        }
+        if (!ganador) {
+            System.out.println("Pulse 'enter' para entraer la siguiente bola");
         }
     }
 
@@ -102,7 +108,7 @@ public class Main {
             carton.mostrarCarton(listaJugadoresBingo.get(i).getCartonJugador());
             System.out.print("\n--------------------------\n");
         }
-        System.out.println("Preparados para jugar al bingo? ('Enter para empezar la partida')");
+        System.out.println("Preparados para jugar al bingo? Los numero que tenga en su carton se pondran entre parentesis: (x) ('Enter para empezar la partida')");
         lector.nextLine();
     }
 
