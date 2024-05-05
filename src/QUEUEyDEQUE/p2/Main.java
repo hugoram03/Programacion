@@ -8,13 +8,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Main {
     static final String RUTAFICHERO = "src/ComparadorPersonas/baseDatos";
-    static LinkedList<Estudiante> estudiantes = new LinkedList<>();
+    static Deque<Estudiante> estudiantes = new ArrayDeque<>();
     static PriorityQueue<Estudiante> priorityQueue = new PriorityQueue();
 
     public static void main(String[] args) {
@@ -45,11 +43,11 @@ public class Main {
         }
     }
 
-    public static void mostrarListaOrdenacionNombre() {
+    /*public static void mostrarListaOrdenacionNombre() {
         System.out.println("\n--Mostrando lista de usuarios con ordenacion por defecto--");
         Collections.sort(estudiantes, new NombreComparator());
         for (int i = 0; i < estudiantes.size(); i++) {
-            System.out.println(estudiantes.get(i));
+            System.out.println(estudiantes.iterator());
         }
-    }
+    }*/
 }
