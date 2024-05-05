@@ -3,7 +3,7 @@ package Juegos.Bingo;
 import java.util.ArrayList;
 
 public class BingoGame {
-    private ArrayList<Integer> bombo = new ArrayList<>();
+    public ArrayList<Integer> bombo = new ArrayList<>();
     public ArrayList<Integer> numerosExtraidos = new ArrayList<>();
 
     public BingoGame() {

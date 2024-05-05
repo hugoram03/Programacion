@@ -9,6 +9,9 @@ import Juegos.MultiplicationGame.MultiplicationGame;
 import Juegos.MultiplicationGame.ThreePlayers;
 import Juegos.MultiplicationGame.TwoPlayers;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,6 +22,7 @@ public class Main {
     static BingoGame bingoGame = new BingoGame();
     static Carton carton = new Carton();
     static boolean ganador = false;
+    static ArrayList<JugadorBingo> listaJugadoresBingo = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -26,15 +30,15 @@ public class Main {
         String opcionJuego = lector.nextLine();
 
         System.out.print("\nCuantos jugadores van a jugar (2 o 3): ");
+        System.out.println("\nSi vas a cargar una partida guardada y no quieres añadir a nadie mas pulsa '0'");
         int numJugadores = lector.nextInt();
 
         menu(numJugadores, opcionJuego);
-
+        lector.close();
     }
 
     public static void menu(int numJugadores, String opcionJuego) {
         ArrayList<Jugador> listaJugadores = numJugadores(numJugadores);
-        ArrayList<JugadorBingo> listaJugadoresBingo = new ArrayList<>();
 
         switch (opcionJuego) {
             case "1":
@@ -44,7 +48,18 @@ public class Main {
                 ahorcado(listaJugadores);
                 break;
             case "3":
-                bingo(numJugadores, listaJugadoresBingo);
+                lector.nextLine();
+                System.out.println("Quieres cargar una partida ya guardada anteriormente (si/no)");
+                String opcion = lector.nextLine();
+                if (opcion.equalsIgnoreCase("si")) {
+                    do {
+                        System.out.println("Numero de posicion que ha sido guardada tu partida (1-10)");
+                        opcion = lector.nextLine();
+                    } while (Integer.parseInt(opcion) > 10 || Integer.parseInt(opcion) < 1);
+                    cargarPartida(opcion);
+                }
+                cargarListaJugadores(numJugadores);
+                bingo(listaJugadoresBingo);
                 break;
             default:
                 System.out.println("Juego incorrecto o no disponible");
@@ -52,10 +67,9 @@ public class Main {
         }
     }
 
-    public static void bingo(int numJugadores, ArrayList<JugadorBingo> listaJugadoresBingo) {
-
+    private static void cargarListaJugadores(int numJugadores) {
         for (int i = 1; i <= numJugadores; i++) {
-            System.out.println("Añade tu informacion jugador " + i);
+            System.out.println("Pulse 'Enter' para añadir la informacion del jugador " + i);
             lector.nextLine();
             System.out.print("Nombre: ");
             String nombre = lector.nextLine();
@@ -70,17 +84,35 @@ public class Main {
                 JugadorBingo jugador = new JugadorBingo(nombre, edad, ciudad, carton.getCarton());
                 listaJugadoresBingo.add(jugador);
             }
-            if (listaJugadoresBingo.isEmpty()){
+            if (listaJugadoresBingo.isEmpty()) {
                 System.exit(0);
             }
         }
+    }
+
+    public static void bingo(ArrayList<JugadorBingo> listaJugadoresBingo) {
         mostrarInfo(listaJugadoresBingo);
         bingoGame.llenarBombo();
+        int cont = 0;
         do {
+            if (cont % 10 == 0) {
+                System.out.println("Llevas " + (cont) + " numeros extraidos quieres guardar la partida? (si/no)");
+                String opcion = lector.nextLine();
+                if (opcion.equalsIgnoreCase("si")) {
+                    do {
+                        System.out.println("En que posicion quieres guardar tu partida (1-10)");
+                        opcion = lector.nextLine();
+                    } while (Integer.parseInt(opcion) > 10 || Integer.parseInt(opcion) < 1);
+
+                    guardarPartida(listaJugadoresBingo, bingoGame.bombo, bingoGame.numerosExtraidos, opcion);
+                    System.out.println("Partida guardada con exito");
+                    System.exit(0);
+                }
+            }
             jugar(listaJugadoresBingo);
             lector.nextLine();
+            cont++;
         } while (!ganador);
-
     }
 
     private static void jugar(ArrayList<JugadorBingo> listaJugadoresBingo) {
@@ -100,6 +132,74 @@ public class Main {
         if (!ganador) {
             System.out.println("Pulse 'enter' para entraer la siguiente bola");
         }
+    }
+
+    public static void guardarPartida(ArrayList<JugadorBingo> listaJugadoresBingo, ArrayList<Integer> bombo, ArrayList<Integer> numerosExtraidos, String opcion) {
+        File fichero = new File("src/Juegos/Bingo/Partidas/partida" + opcion + ".txt");
+        try (PrintWriter printwriter = new PrintWriter(fichero)) {
+            for (int i = 0; i < listaJugadoresBingo.size(); i++) {
+                JugadorBingo jugador = listaJugadoresBingo.get(i);
+                printwriter.println(jugador.getNombre() + "," + jugador.getEdad() + "," + jugador.getCiudad());
+                int[][] cartonJugador = jugador.getCartonJugador();
+                for (int j = 0; j < cartonJugador.length; j++) {
+                    for (int k = 0; k < cartonJugador[j].length; k++) {
+                        if (numerosExtraidos.contains(cartonJugador[j][k])) {
+                            printwriter.print("(" + cartonJugador[j][k] + "),");
+                        } else {
+                            printwriter.print(cartonJugador[j][k] + ",");
+                        }
+                    }
+                    printwriter.println();
+                }
+            }
+            for (int numero : bombo) {
+                printwriter.print(numero + ",");
+            }
+            printwriter.println();
+            for (int numero : numerosExtraidos) {
+                printwriter.print(numero + ",");
+            }
+            printwriter.println();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error al guardar la partida.");
+        }
+    }
+
+    public static void cargarPartida(String opcion) {
+        File fichero = new File("src/Juegos/Bingo/Partidas/partida" + opcion + ".txt");
+        try (Scanner lector = new Scanner((fichero))) {
+            while (lector.hasNextLine()) {
+                String[] jugadorInfo = lector.nextLine().split(",");
+                if (jugadorInfo.length == 3) {
+                    String nombre = jugadorInfo[0];
+                    int edad = Integer.parseInt(jugadorInfo[1]);
+                    String ciudad = jugadorInfo[2];
+                    int[][] carton = new int[3][9];
+                    for (int i = 0; i < carton.length; i++) {
+                        String[] fila = lector.nextLine().split(",");
+                        for (int j = 0; j < fila.length; j++) {
+                            carton[i][j] = Integer.parseInt(fila[j]);
+                        }
+                    }
+                    listaJugadoresBingo.add(new JugadorBingo(nombre, edad, ciudad, carton));
+                } else if (jugadorInfo.length > 3) {
+                    ArrayList<Integer> numeros = new ArrayList<>();
+                    for (String numero : jugadorInfo) {
+                        if (!numero.isEmpty()) {
+                            numeros.add(Integer.parseInt(numero));
+                        }
+                    }
+                    if (bingoGame.bombo.isEmpty()) {
+                        bingoGame.bombo = numeros;
+                    } else {
+                        bingoGame.numerosExtraidos = numeros;
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error al cargar la partida.");
+        }
+        fichero.delete();
     }
 
     public static void mostrarInfo(ArrayList<JugadorBingo> listaJugadoresBingo) {
