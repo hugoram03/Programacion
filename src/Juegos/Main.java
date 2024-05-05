@@ -95,6 +95,9 @@ public class Main {
         bingoGame.llenarBombo();
         int cont = 0;
         do {
+            jugar(listaJugadoresBingo);
+            lector.nextLine();
+            cont++;
             if (cont % 10 == 0) {
                 System.out.println("Llevas " + (cont) + " numeros extraidos quieres guardar la partida? (si/no)");
                 String opcion = lector.nextLine();
@@ -109,9 +112,6 @@ public class Main {
                     System.exit(0);
                 }
             }
-            jugar(listaJugadoresBingo);
-            lector.nextLine();
-            cont++;
         } while (!ganador);
     }
 
