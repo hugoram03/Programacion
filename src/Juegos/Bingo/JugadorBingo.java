@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class JugadorBingo {
+    //TODO porque no lo unes todo y asi los jugadores son todos iguales? El hecho de distinguir entre jugadores bingo o jugadores normales es un poco confuso
     private BingoGame bingoGame = new BingoGame();
     private String nombre;
     private int edad;
@@ -51,6 +52,7 @@ public class JugadorBingo {
         return contadorNums;
     }
 
+    //TODO Nombre del metodo poco claro
     public void setContadorNums() {
         this.contadorNums++;
     }

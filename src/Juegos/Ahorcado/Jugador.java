@@ -1,6 +1,7 @@
 package Juegos.Ahorcado;
 
 public class Jugador {
+    //TODO porque no lo unes todo y asi los jugadores son todos iguales?
     private String nombre;
     private Boolean haFallado;
 

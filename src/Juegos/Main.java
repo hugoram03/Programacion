@@ -21,15 +21,18 @@ public class Main {
     static AhorcadoGame ahorcadoGame = new AhorcadoGame();
     static BingoGame bingoGame = new BingoGame();
     static Carton carton = new Carton();
+    //TODO ganador creo que no deberia de ser una variable global debido a la fuerte dependencia de un solo metodo.
     static boolean ganador = false;
     static ArrayList<JugadorBingo> listaJugadoresBingo = new ArrayList<>();
 
+    //TODO nombre main poco resolvente
     public static void main(String[] args) {
 
         System.out.print("Juegos: \n1- MultiplicationGame \n2- Ahorcado \n3- Bingo \nOpcion: ");
         String opcionJuego = lector.nextLine();
 
         System.out.print("\nCuantos jugadores van a jugar (2 o 3): ");
+        //TODO este mensaje deberia de mostrarse solo si se ha elejido Bingo (por ahora)
         System.out.println("\nSi vas a cargar una partida guardada y no quieres añadir a nadie mas pulsa '0'");
         int numJugadores = lector.nextInt();
 
@@ -58,6 +61,7 @@ public class Main {
                     } while (Integer.parseInt(opcion) > 10 || Integer.parseInt(opcion) < 1);
                     cargarPartida(opcion);
                 }
+                //TODO despues de cargar partida? Se vuelve a preguntar jugadores?????
                 cargarListaJugadores(numJugadores);
                 bingo(listaJugadoresBingo);
                 break;
@@ -103,8 +107,10 @@ public class Main {
                 String opcion = lector.nextLine();
                 if (opcion.equalsIgnoreCase("si")) {
                     do {
+                        //TODO La posicion puede quedar superpuesta, el usuario no deberia de poder elegirlo
                         System.out.println("En que posicion quieres guardar tu partida (1-10)");
                         opcion = lector.nextLine();
+                        //TODO si ponen texto NumberFormatException
                     } while (Integer.parseInt(opcion) > 10 || Integer.parseInt(opcion) < 1);
 
                     guardarPartida(listaJugadoresBingo, bingoGame.bombo, bingoGame.numerosExtraidos, opcion);
@@ -135,6 +141,7 @@ public class Main {
     }
 
     public static void guardarPartida(ArrayList<JugadorBingo> listaJugadoresBingo, ArrayList<Integer> bombo, ArrayList<Integer> numerosExtraidos, String opcion) {
+        //TODO intentar guardar y recuperar estado con serialización, en teoria es mas sencillo.
         File fichero = new File("src/Juegos/Bingo/Partidas/partida" + opcion + ".txt");
         try (PrintWriter printwriter = new PrintWriter(fichero)) {
             for (int i = 0; i < listaJugadoresBingo.size(); i++) {
@@ -166,10 +173,12 @@ public class Main {
     }
 
     public static void cargarPartida(String opcion) {
+        //TODO deberia de ser una extiensión .dat
         File fichero = new File("src/Juegos/Bingo/Partidas/partida" + opcion + ".txt");
         try (Scanner lector = new Scanner((fichero))) {
             while (lector.hasNextLine()) {
                 String[] jugadorInfo = lector.nextLine().split(",");
+                //TODO porque jugador info puede variar su longitud? Que se esta guardando de mas? Entiendo que el carton y los datos se guardan en distinta linea.
                 if (jugadorInfo.length == 3) {
                     String nombre = jugadorInfo[0];
                     int edad = Integer.parseInt(jugadorInfo[1]);

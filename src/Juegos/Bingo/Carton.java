@@ -17,11 +17,9 @@ public class Carton {
 
     public  void rellenarNumerosCarton(int[][] carton) {
 
-        // Declaramos las variables necesarias
         int numAleatorio;
         boolean repetido;
 
-        // Recorre los números
         for (int j = 0; j < carton[0].length; j++) {
             for (int i = 0; i < carton.length; i++) {
                 do {
@@ -57,15 +55,15 @@ public class Carton {
         int[] numeros = new int[3];
         for (int j = 0; j < carton[0].length; j++) {
 
-            // Obtengo los numeros de la columna x
+
             for (int i = 0; i < carton.length; i++) {
                 numeros[i] = carton[i][j];
             }
 
-            // Ordeno los numeros
+
             Arrays.sort(numeros);
 
-            // Vuelvo a asignar los valores, ya ordenados
+
             for (int i = 0; i < numeros.length; i++) {
                 carton[i][j] = numeros[i];
             }
@@ -74,7 +72,6 @@ public class Carton {
     }
 
     public  void mostrarCarton(int[][] carton) {
-        // Recorremos el carton
         for (int i = 0; i < carton.length; i++) {
             for (int j = 0; j < carton[i].length; j++) {
                 if (carton[i][j] == -1) {
@@ -91,6 +88,7 @@ public class Carton {
         }
     }
 
+    //TODO metodo muy muy complejo, intentar diseccionarlo en metodos mas pequeños
     public int[][] marcarHuecosCarton(int[][] carton) {
         int[] arrayNumeros = {1, 1, 1, 1, 1, 1, 1, 1, 1};
         int posicion;
