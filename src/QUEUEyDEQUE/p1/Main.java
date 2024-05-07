@@ -24,7 +24,6 @@ public class Main {
             priorityQueue.poll();
             priorityQueue.comparator();
         }
-
     }
 
     public static void anadeUsuarios() {
