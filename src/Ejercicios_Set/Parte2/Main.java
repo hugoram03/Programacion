@@ -38,7 +38,7 @@ public class Main {
                 String nombre = informacion[0];
                 String apellidos = informacion[1];
                 LocalDate fechaNaciemiento = LocalDate.parse(informacion[2], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                Double notaMedia = Double.parseDouble(informacion[3]);
+                double notaMedia = Double.parseDouble(informacion[3]);
                 Estudiante estudiante = new Estudiante(nombre, apellidos, fechaNaciemiento, notaMedia);
                 hashSet.add(estudiante);
 
@@ -58,7 +58,7 @@ public class Main {
                 String nombre = informacion[0];
                 String apellidos = informacion[1];
                 LocalDate fechaNaciemiento = LocalDate.parse(informacion[2], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                Double notaMedia = Double.parseDouble(informacion[3]);
+                double notaMedia = Double.parseDouble(informacion[3]);
                 Estudiante estudiante = new Estudiante(nombre, apellidos, fechaNaciemiento, notaMedia);
                 linkedHashSet.add(estudiante);
 
@@ -78,7 +78,7 @@ public class Main {
                 String nombre = informacion[0];
                 String apellidos = informacion[1];
                 LocalDate fechaNaciemiento = LocalDate.parse(informacion[2], DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                Double notaMedia = Double.parseDouble(informacion[3]);
+                double notaMedia = Double.parseDouble(informacion[3]);
                 Estudiante estudiante = new Estudiante(nombre, apellidos, fechaNaciemiento, notaMedia);
                 treeSet.add(estudiante);
 

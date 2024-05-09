@@ -18,8 +18,8 @@ public class Main {
     static Set<Estudiante> treeSet = new TreeSet<>();
 
     public static void main(String[] args) {
-        anadeUsuarios2();
-        System.out.println(linkedHashSet);
+        anadeUsuarios();
+        System.out.println(hashSet);
     }
 
     public static void anadeUsuarios() {
