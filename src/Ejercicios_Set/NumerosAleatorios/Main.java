@@ -14,7 +14,7 @@ public class Main {
         System.out.println(numerosAleatorios);
         for (Integer i : numerosAleatorios){
             if (i.equals(5)){
-                System.out.println("Contiene el numero 5:" + Boolean.TRUE);
+                System.out.println("Contiene el numero 5: " + Boolean.TRUE);
             }
         }
         numerosAleatorios.add(0);
@@ -22,5 +22,11 @@ public class Main {
         numerosAleatorios.add(25);
         System.out.println(numerosAleatorios);
 
+        for (Integer i : numerosAleatorios){
+            if (i.equals(5)){
+                numerosAleatorios.remove(i);
+            }
+        }
+        System.out.println(numerosAleatorios);
     }
 }
