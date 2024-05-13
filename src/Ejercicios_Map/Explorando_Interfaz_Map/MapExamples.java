@@ -1,4 +1,4 @@
-package Ejercicios_Map;
+package Ejercicios_Map.Explorando_Interfaz_Map;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
