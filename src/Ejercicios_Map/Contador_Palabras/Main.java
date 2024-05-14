@@ -9,19 +9,23 @@ public class Main {
 
         palabras.add("Hola");
         palabras.add("adios");
-        palabras.add("Mundo");
-        palabras.add("Mundo");
-        palabras.add("Mundo");
         palabras.add("Hola");
+        palabras.add("Mundo");
+        palabras.add("Mundo");
+        palabras.add("Mundo");
 
-        int contador = 0;
+
         for (int i = 0; i < palabras.size(); i++) {
-            if (contadorPalabras.containsKey(palabras.get(i))) {
-                contadorPalabras.put(palabras.get(i), contador++);
+            if (!contadorPalabras.containsKey(palabras.get(i))) {
+                contadorPalabras.put(palabras.get(i), 1);
             } else {
-                contador = 1;
+                int contador = contadorPalabras.get(palabras.get(i));
+                contador++;
                 contadorPalabras.put(palabras.get(i), contador);
             }
+
+            //TODO TAMBIEN SE PUEDE HACER MAS FACIL CON ESTE METODO.
+            //contadorPalabras.put(palabras.get(i), contadorPalabras.getOrDefault(palabras.get(i), 0) + 1);
         }
         System.out.println("CONTADOR DE PALABRAS REPETIDAS");
         System.out.println(contadorPalabras);

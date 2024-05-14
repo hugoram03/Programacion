@@ -1,0 +1,33 @@
+Clase Cuenta:
+Representa una cuenta bancaria con atributos como número de cuenta, saldo y titular.
+Puedes incluir métodos para depositar, retirar y consultar saldo.
+Implementa la interfaz Comparable para ordenar las cuentas por número de cuenta o saldo.
+
+Clase Cliente:
+Representa a un cliente del banco con atributos como nombre, dirección y lista de cuentas asociadas.
+Puedes usar una colección como ArrayList para almacenar las cuentas del cliente.
+Implementa métodos para agregar y eliminar cuentas.
+
+Clase Transacción:
+Representa una transacción bancaria con atributos como fecha, tipo (depósito o retiro), monto y cuenta asociada.
+Implementa la interfaz Comparable para ordenar las transacciones por fecha.
+Usar un enum para definir los tipos de transacciones posibles,
+como “depósito” o “retiro”.
+
+Simulador de Operaciones:
+Crea una clase principal que simule las operaciones bancarias.
+Permite al usuario crear cuentas, realizar depósitos, retiros y consultar saldos.
+Utiliza un ArrayList para almacenar las transacciones realizadas.
+Ordena las transacciones por fecha utilizando la interfaz Comparable.
+
+Persistencia de Datos:
+Guarda las cuentas y transacciones en un archivo CSV para mantener la información entre sesiones.
+Implementa métodos para cargar y guardar datos desde/hacia el archivo.
+
+Menú de Interacción:
+Diseña un menú de opciones para que el usuario pueda interactuar con el simulador.
+Ofrece opciones como crear cuenta, realizar transacción, consultar saldo, etc.
+
+Opcion de pedir un prestamo:
+Preguntar el dinero del prestamo y los meses.
+Sacar el dinero y el interes total que debera pagar.
