@@ -13,6 +13,9 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+    public Cliente() {
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -27,6 +30,10 @@ public class Cliente {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public Collection<Cuenta> getCuentasCliente() {
+        return cuentasCliente;
     }
 
     public void agregarCuenta(Cuenta cuenta) {
