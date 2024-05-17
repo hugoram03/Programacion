@@ -9,7 +9,8 @@ Puedes usar una colección como ArrayList para almacenar las cuentas del cliente
 Implementa métodos para agregar y eliminar cuentas.
 
 Clase Transacción:
-Representa una transacción bancaria con atributos como fecha, tipo (depósito o retiro), monto y cuenta asociada.
+Representa una transacción bancaria con atributos como fecha,
+tipo (depósito o retiro), monto y cuenta asociada.
 Implementa la interfaz Comparable para ordenar las transacciones por fecha.
 Usar un enum para definir los tipos de transacciones posibles,
 como “depósito” o “retiro”.
