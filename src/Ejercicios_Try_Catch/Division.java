@@ -1,18 +1,17 @@
 package Ejercicios_Try_Catch;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
 public class Division {
     static Scanner lector = new Scanner(System.in);
-    // static Logger LOGGER = LogManager.getRootLogger();
+    static Logger LOGGER = LogManager.getRootLogger();
 
     public static void main(String[] args) {
-        //division();
+        division();
         //division1();
         //division2();
     }
@@ -29,7 +28,7 @@ public class Division {
         } catch (InputMismatchException e) {
             System.out.println("Operador no valido");
         } catch (ArithmeticException ex) {
-            //LOGGER.error("Error aritmetico no se puede dividir por 0");
+            LOGGER.error("Error aritmetico no se puede dividir por 0");
         } finally {
             lector.close();
         }
