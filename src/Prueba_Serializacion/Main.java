@@ -9,12 +9,17 @@ import java.util.Collection;
 
 public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
+        File fichero = new File("src/Prueba_Serializacion/fichero.txt");
         /*Grupo daw = new Grupo();
         daw.agregarAlumno(new Alumno("Hugo", 20, "1234568790"));
         guardarFichero(daw);
         System.out.println("Clase Alumno guardada en el fichero");
         cargarFichero();*/
+
+        guardarFicheroBuffered(fichero);
+        cargarFicheroBuffered(fichero);
 
         ArrayList<Integer> numeros = new ArrayList<>();
         numeros.add(1);
@@ -22,6 +27,24 @@ public class Main {
         for (int i = 0; i < numeros.size(); i++) {
             System.out.println(numeros.get(i));
         }
+    }
+
+    public static void guardarFicheroBuffered(File fichero) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
+        for (int i = 1; i <= 10; i++) {
+            bw.write("Esta es la linea: " + i);
+            bw.newLine();
+        }
+        bw.close();
+    }
+
+    public static void cargarFicheroBuffered(File fichero) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(fichero));
+        String linea;
+        while ((linea = br.readLine()) != null){
+            System.out.println(linea);
+        }
+        br.close();
     }
 
     public static void guardarFichero(Grupo grupo) {
