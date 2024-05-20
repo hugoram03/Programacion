@@ -15,6 +15,7 @@ public class Cuenta implements Comparable<Cuenta> {
         this.titular = titular;
     }
 
+
     public String getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -39,7 +40,7 @@ public class Cuenta implements Comparable<Cuenta> {
         setSaldo(getSaldo() + dinero);
     }
 
-    public void retirar(int dinero) {
+    public void retirar(double dinero) {
         setSaldo(getSaldo() - dinero);
     }
 

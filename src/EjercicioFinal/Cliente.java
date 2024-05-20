@@ -1,13 +1,12 @@
 package EjercicioFinal;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Objects;
 
 public class Cliente {
     private String nombre;
     private String direccion;
-    private Collection<Cuenta> cuentasCliente = new ArrayList<>();
+    private ArrayList<Cuenta> cuentasCliente = new ArrayList<>();
     public Cliente(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
@@ -32,7 +31,7 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public Collection<Cuenta> getCuentasCliente() {
+    public ArrayList<Cuenta> getCuentasCliente() {
         return cuentasCliente;
     }
 
