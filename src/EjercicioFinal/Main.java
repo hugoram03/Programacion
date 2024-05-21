@@ -3,6 +3,8 @@ package EjercicioFinal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,8 +12,10 @@ public class Main {
     static Scanner lector = new Scanner(System.in);
     static Banco banco = new Banco();
     static Logger LOGGER = LogManager.getRootLogger();
+    static final File FICHERO = new File("src/EjercicioFinal/CuentasClientes.txt");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        banco.guardarFichero(FICHERO);
         Cliente c = null;
         try {
             c = preguntarCliente(c);
@@ -19,6 +23,7 @@ public class Main {
         } catch (NullPointerException e) {
             LOGGER.error("El cliente es nulo");
         }
+        lector.close();
     }
 
     public static void menu(Cliente c) {
@@ -29,6 +34,7 @@ public class Main {
                         "2- Realizar Deposito\n" +
                         "3- Realizar Retiro\n" +
                         "4- Consultar saldo\n" +
+                        "5- Eliminar Cuenta" +
                         "0- Salir");
                 opcion = lector.nextInt();
                 lector.nextLine();
@@ -37,48 +43,73 @@ public class Main {
                         crearCuenta(c);
                         break;
                     case 2:
-                        int indice = 0;
-                        do {
-                            System.out.print("Numero de cuenta a la que quieres añadir dinero: (0-" + (c.getCuentasCliente().size() - 1) + ") ");
-                            indice = lector.nextInt();
-                        } while (indice > c.getCuentasCliente().size());
-                        System.out.print("Cantidad de dinero a ingresar: ");
-                        int dinero = lector.nextInt();
-                        c.getCuentasCliente().get(indice).depositar(dinero);
-                        System.out.println("SALDO INGRESADO");
+                        realizarDeposito(c);
                         break;
                     case 3:
-                        indice = 0;
-                        do {
-                            System.out.print("Numero de cuenta de la que quieres retirar saldo (0-" + (c.getCuentasCliente().size() - 1) + ") ");
-                            indice = lector.nextInt();
-                        } while (indice > c.getCuentasCliente().size());
-                        System.out.println("Saldo actual: " + c.getCuentasCliente().get(indice).getSaldo() + "€");
-                        System.out.print("Cuanto saldo quieres retirar: ");
-                        double saldo = lector.nextDouble();
-                        if (saldo > c.getCuentasCliente().get(indice).getSaldo()) {
-                            System.out.println("Lo siento no se puede retirar " + saldo + "€ por que excede de la cantidad total de tu cuenta");
-                        } else {
-                            c.getCuentasCliente().get(indice).retirar(saldo);
-                            System.out.println("SALDO RETIRADO");
-                        }
+                        realizarRetiro(c);
                         break;
                     case 4:
-                        indice = 0;
-                        do {
-                            System.out.print("Numero de cuenta de la que quieres consultar el saldo: (0-" + (c.getCuentasCliente().size() - 1) + ") ");
-                            indice = lector.nextInt();
-                        } while (indice > c.getCuentasCliente().size());
-                        System.out.println("El saldo de la cuenta es: " + c.getCuentasCliente().get(indice).getSaldo() + "€");
+                        consultarSaldo(c);
+                        break;
+                    case 5:
+                        eliminarCuenta(c);
                         break;
                     default:
                         System.out.println("Saliendo del programa...");
+                        banco.guardarFichero(FICHERO);
                         break;
                 }
             } while (opcion != 0);
         } catch (NumberFormatException e) {
             LOGGER.error("El valor introducido no es un numero");
+        } catch (IOException e) {
+            LOGGER.error("Error al guardar el fichero");
         }
+    }
+
+    private static void eliminarCuenta(Cliente c) {
+        String numCuenta;
+        System.out.print("Escribe el numero de cuenta de la cuenta que quieres eliminar");
+        numCuenta = lector.nextLine();
+        c.eliminarCuenta(numCuenta);
+    }
+
+    private static void consultarSaldo(Cliente c) {
+        int indice;
+        do {
+            System.out.print("Numero de cuenta de la que quieres consultar el saldo: (0-" + (c.getCuentasCliente().size() - 1) + ") ");
+            indice = lector.nextInt();
+        } while (indice > c.getCuentasCliente().size());
+        System.out.println("El saldo de la cuenta es: " + c.getCuentasCliente().get(indice).getSaldo() + "€");
+    }
+
+    private static void realizarRetiro(Cliente c) {
+        int indice;
+        do {
+            System.out.print("Numero de cuenta de la que quieres retirar saldo (0-" + (c.getCuentasCliente().size() - 1) + ") ");
+            indice = lector.nextInt();
+        } while (indice > c.getCuentasCliente().size());
+        System.out.println("Saldo actual: " + c.getCuentasCliente().get(indice).getSaldo() + "€");
+        System.out.print("Cuanto saldo quieres retirar: ");
+        double saldo = lector.nextDouble();
+        if (saldo > c.getCuentasCliente().get(indice).getSaldo()) {
+            System.out.println("Lo siento no se puede retirar " + saldo + "€ por que excede de la cantidad total de tu cuenta");
+        } else {
+            c.getCuentasCliente().get(indice).retirar(saldo);
+            System.out.println("SALDO RETIRADO");
+        }
+    }
+
+    private static void realizarDeposito(Cliente c) {
+        int indice;
+        do {
+            System.out.print("Numero de cuenta a la que quieres añadir dinero: (0-" + (c.getCuentasCliente().size() - 1) + ") ");
+            indice = lector.nextInt();
+        } while (indice > c.getCuentasCliente().size());
+        System.out.print("Cantidad de dinero a ingresar: ");
+        int dinero = lector.nextInt();
+        c.getCuentasCliente().get(indice).depositar(dinero);
+        System.out.println("SALDO INGRESADO");
     }
 
     public static Cliente preguntarCliente(Cliente c) {

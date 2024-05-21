@@ -1,4 +1,1 @@
-numero de cuenta;saldo;titular
-1234;100.5;Hugo Ramirez
-4567;20452.14;Adrian Garcia
-7890;200;Raul Sisternas
+Hugo;asd;[Cuenta{numeroCuenta='45', saldo=555.0, titular='asd'}]

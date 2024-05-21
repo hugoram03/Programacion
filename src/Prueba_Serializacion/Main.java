@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
@@ -21,14 +21,13 @@ public class Main {
         guardarFicheroBuffered(fichero);
         cargarFicheroBuffered(fichero);
 
-        ArrayList<Integer> numeros = new ArrayList<>();
+        List<Integer> numeros = new ArrayList<>();
         numeros.add(1);
         numeros.add(2);
         for (int i = 0; i < numeros.size(); i++) {
             System.out.println(numeros.get(i));
         }
     }
-
     public static void guardarFicheroBuffered(File fichero) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
         for (int i = 1; i <= 10; i++) {
