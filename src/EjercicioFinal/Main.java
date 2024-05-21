@@ -131,12 +131,15 @@ public class Main {
     }
 
     public static Cliente crearCliente() {
+        Cliente cliente = null;
         System.out.println("---Creacion de Cliente---");
         System.out.println("Nombre: ");
         String nombre = lector.nextLine();
         System.out.println("Direccion: ");
         String direccion = lector.nextLine();
-        return new Cliente(nombre, direccion);
+        cliente = new Cliente(nombre, direccion);
+        crearCuenta(cliente);
+        return cliente;
     }
 
     public static void crearCuenta(Cliente cliente) {
