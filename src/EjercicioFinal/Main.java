@@ -14,14 +14,16 @@ public class Main {
     static Logger LOGGER = LogManager.getRootLogger();
     static final File FICHERO = new File("src/EjercicioFinal/CuentasClientes.txt");
 
-    public static void main(String[] args) throws IOException {
-        banco.guardarFichero(FICHERO);
+    public static void main(String[] args) {
         Cliente c = null;
         try {
+            banco.cargarFichero(FICHERO);
             c = preguntarCliente(c);
             menu(c);
         } catch (NullPointerException e) {
             LOGGER.error("El cliente es nulo");
+        } catch (IOException e) {
+            LOGGER.error("Error al cargar el archivo");
         }
         lector.close();
     }
@@ -34,7 +36,7 @@ public class Main {
                         "2- Realizar Deposito\n" +
                         "3- Realizar Retiro\n" +
                         "4- Consultar saldo\n" +
-                        "5- Eliminar Cuenta" +
+                        "5- Eliminar Cuenta\n" +
                         "0- Salir");
                 opcion = lector.nextInt();
                 lector.nextLine();

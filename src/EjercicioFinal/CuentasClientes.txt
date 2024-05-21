@@ -1,1 +1,2 @@
-Hugo;asd;[Cuenta{numeroCuenta='45', saldo=555.0, titular='asd'}]
+Hugo;asd;123;45.0;hugo;456;1500.0;Hugo;122;3800.0;hugo;
+Pablo;dfdf;789;85.0;Pablo;
