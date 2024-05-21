@@ -29,7 +29,6 @@ public class Main {
         //guardarFicheroBuffered(fichero);
         //cargarFicheroBuffered(fichero);
 
-
     }
     public static void guardarFicheroBuffered(File fichero) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
