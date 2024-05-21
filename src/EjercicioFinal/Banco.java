@@ -3,9 +3,11 @@ package EjercicioFinal;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class Banco {
+public class Banco implements Serializable {
     private List<Cliente> clientes = new ArrayList<>();
+    private static final long serialVersionUID = 6433858223774886977L;
 
     public List<Cliente> getClientes() {
         return clientes;
@@ -45,10 +47,30 @@ public class Banco {
             String[] campos = linea.split(";");
             Cliente cliente = new Cliente(campos[0], campos[1]);
             clientes.add(cliente);
-            for (int i = 2; i < campos.length; i+=3) {
-                cliente.agregarCuenta(new Cuenta(campos[i], Double.parseDouble(campos[i+1]), campos[i+2]));
+            for (int i = 2; i < campos.length; i += 3) {
+                cliente.agregarCuenta(new Cuenta(campos[i], Double.parseDouble(campos[i + 1]), campos[i + 2]));
             }
         }
         br.close();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Banco banco = (Banco) o;
+        return Objects.equals(clientes, banco.clientes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(clientes);
+    }
+
+    @Override
+    public String toString() {
+        return "Banco{" +
+                "clientes=" + clientes +
+                '}';
     }
 }

@@ -3,8 +3,7 @@ package EjercicioFinal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -13,8 +12,10 @@ public class Main {
     static Banco banco = new Banco();
     static Logger LOGGER = LogManager.getRootLogger();
     static final File FICHERO = new File("src/EjercicioFinal/CuentasClientes.txt");
+    static final File FICHERO2 = new File("src/EjercicioFinal/Serializable2.dat");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        cargarFicheroSerializable();
         Cliente c = null;
         try {
             banco.cargarFichero(FICHERO);
@@ -26,6 +27,7 @@ public class Main {
             LOGGER.error("Error al cargar el archivo");
         }
         lector.close();
+        guardarFicheroSerializable();
     }
 
     public static void menu(Cliente c) {
@@ -115,6 +117,7 @@ public class Main {
     }
 
     public static Cliente preguntarCliente(Cliente c) {
+
         System.out.println("---Bienvenido a tu banco de confianza---");
         System.out.println("¿Ya eres cliente de este banco? (s/n)");
         String txt = lector.nextLine();
@@ -157,5 +160,19 @@ public class Main {
         System.out.print("Titular de la cuenta: ");
         String titular = lector.nextLine();
         cliente.agregarCuenta(new Cuenta(numCuenta, saldo, titular));
+    }
+
+    public static void guardarFicheroSerializable() throws IOException {
+        FileOutputStream fileOutputStream = new FileOutputStream(FICHERO2);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(banco);
+        objectOutputStream.close();
+    }
+
+    public static void cargarFicheroSerializable() throws IOException, ClassNotFoundException {
+        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FICHERO2));
+        banco = (Banco) objectInputStream.readObject();
+        objectInputStream.close();
+        System.out.println(banco);
     }
 }

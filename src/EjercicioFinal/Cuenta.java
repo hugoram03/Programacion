@@ -1,13 +1,15 @@
 package EjercicioFinal;
 
+import java.io.Serializable;
 import java.text.Collator;
 import java.util.Objects;
 
-public class Cuenta implements Comparable<Cuenta> {
+public class Cuenta implements Comparable<Cuenta>, Serializable {
+    private static final long serialVersionUID = 6433858223774886977L;
     private String numeroCuenta;
     private double saldo;
     private String titular;
-    private Collator miCollator = Collator.getInstance();
+    private transient Collator miCollator = Collator.getInstance();
 
     public Cuenta(String numeroCuenta, double saldo, String titular) {
         this.numeroCuenta = numeroCuenta;

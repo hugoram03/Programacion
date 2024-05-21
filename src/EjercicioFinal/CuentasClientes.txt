@@ -1,3 +1,4 @@
 Hugo;asd;123;45.0;hugo;456;1500.0;Hugo;122;3800.0;hugo;
 Pablo;dfdf;789;85.0;Pablo;
-Hugo;Pablo Picasso;123458897;78000.0;Hugo Ramos;1235468784564894;1200.0;hUGO rAMOS;
+Hugo;Pablo Picasso;123458897;78000.0;Hugo Ramos;1235468784564894;5700.0;hUGO rAMOS;
+Hugo;as;584;54.0;asd;
