@@ -1,9 +1,11 @@
 package EjercicioFinal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente implements Serializable {
+    private static final long serialVersionUID = 6433858223774886977L;
     private String nombre;
     private String direccion;
     private ArrayList<Cuenta> cuentasCliente = new ArrayList<>();

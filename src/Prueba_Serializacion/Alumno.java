@@ -45,4 +45,5 @@ public class Alumno implements Serializable {
                 ", nia='" + nia + '\'' +
                 '}';
     }
+
 }

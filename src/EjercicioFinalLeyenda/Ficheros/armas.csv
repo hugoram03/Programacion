@@ -1,0 +1,21 @@
+NOMBRE;ATAQUE;TIPO;VALOR;DESCRIP
+Espada Dorada;17;MELE;34;Espada creada en los mismos confines de la Leyenda
+Dagas Demoniacas;15;MELE;30;Dagas robadas al mismo Demonio
+Palanca;13;MELE;26;Una palanca
+Puños;10;MELE;20;A puños como un valiente
+Espada Runica;20;MELE;40;La Espada de la Leyenda, corta cabezas como panes
+Arco de Cazador;12;ARCO;24;Arco utilizado para cazar alces
+Arco de la Tormenta;14;ARCO;28;Arco forjado en una lluvia de truenos y relampagos
+Arco del Destino;16;ARCO;32;El destino es incierto, pero la trayectoria no
+Arco de la Luna;18;ARCO;38;La bella Luna bendice tus flechas
+Arco del Sol;20;ARCO;40;El majestuoso Sol bendice tus flechas
+Chispas;15;HECHIZO;30;Hechizo electrizante
+Trueno;18;HECHIZO;36;El uso de la electricidad al nivel máximo
+Bola de Fuego;17;HECHIZO;34;EL uso del fuego al nivel máximo
+Bomba de Agua;15;HECHIZO;30;Bomba va!
+Geiser de Agua;18;HECHIZO;36;El uso del agua al nivel máximo
+Francotirador improvisado;16;FUSIL;32;Francotirador formado por piezas rotas
+Francotirador refinado;20;FUSIL;40;Francotirador hecho por materiales refinados
+Pistola;12;FUSIL;24;Pistola simple
+Escopeta;18;FUSIL;36;Escopeta rebienta cabezas
+Fusil Automatico;14;FUSIL;28;Fusil automático

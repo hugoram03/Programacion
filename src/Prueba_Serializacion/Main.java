@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -12,21 +13,22 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         File fichero = new File("src/Prueba_Serializacion/fichero.txt");
+        Alumno a1 = new Alumno("Hugo", 15, "1325");
+        Alumno a2 = new Alumno("Hugo", 19, "4525");
+        Grupo daw = new Grupo();
+        daw.agregarAlumno(a1);
+        daw.agregarAlumno(a2);
+        Collections.sort(daw.getGrupo(), new NombreComparator());
+        System.out.println(daw.getGrupo());
         /*Grupo daw = new Grupo();
         daw.agregarAlumno(new Alumno("Hugo", 20, "1234568790"));
         guardarFichero(daw);
         System.out.println("Clase Alumno guardada en el fichero");
         cargarFichero();*/
 
-        guardarFicheroBuffered(fichero);
-        cargarFicheroBuffered(fichero);
+        //guardarFicheroBuffered(fichero);
+        //cargarFicheroBuffered(fichero);
 
-        List<Integer> numeros = new ArrayList<>();
-        numeros.add(1);
-        numeros.add(2);
-        for (int i = 0; i < numeros.size(); i++) {
-            System.out.println(numeros.get(i));
-        }
     }
     public static void guardarFicheroBuffered(File fichero) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
