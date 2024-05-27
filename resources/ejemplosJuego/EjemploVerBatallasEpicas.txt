@@ -1,0 +1,24 @@
+Bienvenido al **TEMPLO OLVIDADO**
+1. Jugar
+2. Ver batallas épicas
+3. Salir
+
+Seleccione una opción: 2
+
+**BATALLAS ÉPICAS**
+
+Batalla 1 ganada por los ladrones:
+Guardián: Darius, GUERRERA, FUERZA vs Ladrón: Gideon, GUERRERA, FUERZA --> LADRÓN GANA 
+Guardián: Hector, GUERRERA, FUERZA vs Ladrón: Lyra, MAGA, MAGIA --> GUARDIÁN GANA
+Guardián: Soren, MAGA, MAGIA vs Ladrón: Thalia, MAGA, MAGIA --> GUARDIÁN GANA
+Guardián: Rhea, CAZADORA, FUERZA vs Ladrón: Orion, CAZADORA, FUERZA --> LADRÓN GANA 
+Guardián: Elara, CAZADORA, FUERZA vs Ladrón: Aela, CAZADORA, FUERZA --> LADRÓN GANA 
+
+Batalla 2 ganada por los ladrones:
+Guardián: Aela, CAZADORA, FUERZA vs Ladrón: Nidia, MAGA, MAGIA --> LADRÓN GANA 
+
+Batalla 3 ganada por los guardianes:
+Guardián: Hector, GUERRERA, FUERZA vs Ladrón: Lyra, MAGA, MAGIA --> GUARDIÁN GANA
+Guardián: Orion, CAZADORA, FUERZA vs Ladrón: Nidia, MAGA, MAGIA --> LADRÓN GANA 
+
+Process finished with exit code 0

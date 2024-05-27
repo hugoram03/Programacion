@@ -1,0 +1,109 @@
+Bienvenido al **TEMPLO OLVIDADO**
+1. Jugar
+2. Ver batallas épicas
+3. Salir
+
+Seleccione una opción: 1
+En primer lugar indica el número de guardianes que hay en el templo con un valor entre 1 y 5:
+2
+Elije a tus 2 GUARDIANES de entre los siguientes personajes.
+Personaje{nombre='Darius', clase=GUERRERA, atributo=FUERZA, penalizacion=20, puntosExperiencia=95, valentia=125}
+Personaje{nombre='Rhea', clase=CAZADORA, atributo=FUERZA, penalizacion=25, puntosExperiencia=85, valentia=85}
+Personaje{nombre='Elara', clase=CAZADORA, atributo=FUERZA, penalizacion=35, puntosExperiencia=90, valentia=80}
+Personaje{nombre='Aela', clase=CAZADORA, atributo=FUERZA, penalizacion=30, puntosExperiencia=85, valentia=80}
+Personaje{nombre='Hector', clase=GUERRERA, atributo=FUERZA, penalizacion=40, puntosExperiencia=90, valentia=100}
+Personaje{nombre='Soren', clase=MAGA, atributo=MAGIA, penalizacion=80, puntosExperiencia=70, valentia=90}
+Personaje{nombre='Orion', clase=CAZADORA, atributo=FUERZA, penalizacion=20, puntosExperiencia=85, valentia=90}
+Personaje{nombre='Thalia', clase=MAGA, atributo=MAGIA, penalizacion=70, puntosExperiencia=70, valentia=100}
+Personaje{nombre='Nidia', clase=MAGA, atributo=MAGIA, penalizacion=60, puntosExperiencia=75, valentia=115}
+Personaje{nombre='Marcus', clase=GUERRERA, atributo=FUERZA, penalizacion=30, puntosExperiencia=85, valentia=105}
+Personaje{nombre='Gideon', clase=GUERRERA, atributo=FUERZA, penalizacion=50, puntosExperiencia=95, valentia=95}
+Personaje{nombre='Lyra', clase=MAGA, atributo=MAGIA, penalizacion=50, puntosExperiencia=80, valentia=130}
+Introduce el nombre completo del personaje 1:
+darius
+Introduce el nombre completo del personaje 2:
+soren
+Ahora debes equipar a tus 2 GUARDIANES con 3 objetos mágicos para cada uno.
+ObjetoMagico{id=1, atributo=MAGIA, nombre='Lágrima de la Luna', poder=90}
+ObjetoMagico{id=2, atributo=INTELIGENCIA, nombre='Espejo de la Verdad', poder=80}
+ObjetoMagico{id=3, atributo=FUERZA, nombre='Espada de los Ancestros', poder=95}
+ObjetoMagico{id=4, atributo=MAGIA, nombre='Grimorio de los Antiguos', poder=85}
+ObjetoMagico{id=5, atributo=INTELIGENCIA, nombre='Cristal de la Clarividencia', poder=75}
+ObjetoMagico{id=6, atributo=FUERZA, nombre='Amuleto del Valor', poder=90}
+ObjetoMagico{id=7, atributo=MAGIA, nombre='Varita del Arcano', poder=95}
+ObjetoMagico{id=8, atributo=INTELIGENCIA, nombre='Libro de los Secretos', poder=85}
+ObjetoMagico{id=9, atributo=FUERZA, nombre='Guantelete de la Fortaleza', poder=100}
+ObjetoMagico{id=10, atributo=MAGIA, nombre='Orbe de la Iluminación', poder=80}
+ObjetoMagico{id=11, atributo=INTELIGENCIA, nombre='Tomo de la Sabiduría', poder=90}
+ObjetoMagico{id=12, atributo=FUERZA, nombre='Escudo del Resplandor', poder=85}
+ObjetoMagico{id=13, atributo=MAGIA, nombre='Reloj del Tiempo', poder=75}
+ObjetoMagico{id=14, atributo=INTELIGENCIA, nombre='Bastón de los Elementos', poder=95}
+ObjetoMagico{id=15, atributo=FUERZA, nombre='Armadura del Destino', poder=90}
+ObjetoMagico{id=16, atributo=MAGIA, nombre='Talisman del Encantamiento', poder=85}
+ObjetoMagico{id=17, atributo=INTELIGENCIA, nombre='Pergamino de los Conocimientos', poder=80}
+ObjetoMagico{id=18, atributo=FUERZA, nombre='Martillo de la Justicia', poder=95}
+ObjetoMagico{id=19, atributo=MAGIA, nombre='Cáliz de la Eternidad', poder=90}
+ObjetoMagico{id=20, atributo=INTELIGENCIA, nombre='Anillo de la Protección', poder=85}
+Introduce el identificador del objeto mágico 1 que quieres equipar a Darius:
+2
+Introduce el identificador del objeto mágico 2 que quieres equipar a Darius:
+5
+Introduce el identificador del objeto mágico 3 que quieres equipar a Darius:
+19
+Introduce el identificador del objeto mágico 1 que quieres equipar a Soren:
+1
+Introduce el identificador del objeto mágico 2 que quieres equipar a Soren:
+11
+Introduce el identificador del objeto mágico 3 que quieres equipar a Soren:
+20
+Elije a tus 2 LADRONES de entre los siguientes personajes.
+Personaje{nombre='Rhea', clase=CAZADORA, atributo=FUERZA, penalizacion=25, puntosExperiencia=85, valentia=85}
+Personaje{nombre='Elara', clase=CAZADORA, atributo=FUERZA, penalizacion=35, puntosExperiencia=90, valentia=80}
+Personaje{nombre='Aela', clase=CAZADORA, atributo=FUERZA, penalizacion=30, puntosExperiencia=85, valentia=80}
+Personaje{nombre='Hector', clase=GUERRERA, atributo=FUERZA, penalizacion=40, puntosExperiencia=90, valentia=100}
+Personaje{nombre='Orion', clase=CAZADORA, atributo=FUERZA, penalizacion=20, puntosExperiencia=85, valentia=90}
+Personaje{nombre='Thalia', clase=MAGA, atributo=MAGIA, penalizacion=70, puntosExperiencia=70, valentia=100}
+Personaje{nombre='Nidia', clase=MAGA, atributo=MAGIA, penalizacion=60, puntosExperiencia=75, valentia=115}
+Personaje{nombre='Marcus', clase=GUERRERA, atributo=FUERZA, penalizacion=30, puntosExperiencia=85, valentia=105}
+Personaje{nombre='Gideon', clase=GUERRERA, atributo=FUERZA, penalizacion=50, puntosExperiencia=95, valentia=95}
+Personaje{nombre='Lyra', clase=MAGA, atributo=MAGIA, penalizacion=50, puntosExperiencia=80, valentia=130}
+Introduce el nombre completo del personaje 1:
+Elara
+Introduce el nombre completo del personaje 2:
+Aela
+Ahora debes equipar a tus 2 LADRONES con 3 objetos mágicos para cada uno.
+ObjetoMagico{id=1, atributo=MAGIA, nombre='Lágrima de la Luna', poder=90}
+ObjetoMagico{id=2, atributo=INTELIGENCIA, nombre='Espejo de la Verdad', poder=80}
+ObjetoMagico{id=3, atributo=FUERZA, nombre='Espada de los Ancestros', poder=95}
+ObjetoMagico{id=4, atributo=MAGIA, nombre='Grimorio de los Antiguos', poder=85}
+ObjetoMagico{id=5, atributo=INTELIGENCIA, nombre='Cristal de la Clarividencia', poder=75}
+ObjetoMagico{id=6, atributo=FUERZA, nombre='Amuleto del Valor', poder=90}
+ObjetoMagico{id=7, atributo=MAGIA, nombre='Varita del Arcano', poder=95}
+ObjetoMagico{id=8, atributo=INTELIGENCIA, nombre='Libro de los Secretos', poder=85}
+ObjetoMagico{id=9, atributo=FUERZA, nombre='Guantelete de la Fortaleza', poder=100}
+ObjetoMagico{id=10, atributo=MAGIA, nombre='Orbe de la Iluminación', poder=80}
+ObjetoMagico{id=11, atributo=INTELIGENCIA, nombre='Tomo de la Sabiduría', poder=90}
+ObjetoMagico{id=12, atributo=FUERZA, nombre='Escudo del Resplandor', poder=85}
+ObjetoMagico{id=13, atributo=MAGIA, nombre='Reloj del Tiempo', poder=75}
+ObjetoMagico{id=14, atributo=INTELIGENCIA, nombre='Bastón de los Elementos', poder=95}
+ObjetoMagico{id=15, atributo=FUERZA, nombre='Armadura del Destino', poder=90}
+ObjetoMagico{id=16, atributo=MAGIA, nombre='Talisman del Encantamiento', poder=85}
+ObjetoMagico{id=17, atributo=INTELIGENCIA, nombre='Pergamino de los Conocimientos', poder=80}
+ObjetoMagico{id=18, atributo=FUERZA, nombre='Martillo de la Justicia', poder=95}
+ObjetoMagico{id=19, atributo=MAGIA, nombre='Cáliz de la Eternidad', poder=90}
+ObjetoMagico{id=20, atributo=INTELIGENCIA, nombre='Anillo de la Protección', poder=85}
+Introduce el identificador del objeto mágico 1 que quieres equipar a Elara:
+14
+Introduce el identificador del objeto mágico 2 que quieres equipar a Elara:
+17
+Introduce el identificador del objeto mágico 3 que quieres equipar a Elara:
+20
+Introduce el identificador del objeto mágico 1 que quieres equipar a Aela:
+4
+Introduce el identificador del objeto mágico 2 que quieres equipar a Aela:
+16
+Introduce el identificador del objeto mágico 3 que quieres equipar a Aela:
+18
+Guardián: Darius, GUERRERA, FUERZA vs Ladrón: Elara, CAZADORA, FUERZA --> GUARDIÁN GANA
+Guardián: Soren, MAGA, MAGIA vs Ladrón: Aela, CAZADORA, FUERZA --> LADRÓN GANA 
+Los guardianes han ganado la batalla. Esta batalla ha sido épica. Quedará almacenada  en la historia del templo.
